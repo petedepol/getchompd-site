@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chompd – Bite Back at Subscriptions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anybody:wght@700;900&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --chomp-red: #FF2D55;
+    --chomp-red-dark: #D41E43;
+    --chomp-orange: #FF6B35;
+    --chomp-dark: #0A0A0F;
+    --chomp-darker: #06060A;
+    --chomp-surface: #12121A;
+    --chomp-surface-light: #1A1A26;
+    --chomp-gold: #FFD23F;
+    --chomp-teal: #1B8F6A;
+    --chomp-white: #F0F0F5;
+    --chomp-muted: #8888A0;
+    --font-display: 'Anybody', sans-serif;
+    --font-body: 'DM Sans', sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--chomp-darker);
+    color: var(--chomp-white);
+    font-family: var(--font-body);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 9999;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    padding: 1.25rem 2rem;
+    display: flex; justify-content: space-between; align-items: center;
+    backdrop-filter: blur(20px);
+    background: rgba(6,6,10,0.7);
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+  }
+  .nav-logo {
+    font-family: var(--font-display); font-weight: 900; font-size: 1.6rem;
+    letter-spacing: -0.02em;
+    background: linear-gradient(135deg, var(--chomp-red), var(--chomp-orange));
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  }
+  .nav-links { display: flex; gap: 2rem; align-items: center; }
+  .nav-links a { color: var(--chomp-muted); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--chomp-white); }
+  .nav-cta {
+    padding: 0.6rem 1.5rem; background: var(--chomp-red); color: white; border: none;
+    border-radius: 100px; font-family: var(--font-body); font-weight: 600; font-size: 0.9rem;
+    cursor: pointer; transition: all 0.3s ease; text-decoration: none;
+  }
+  .nav-cta:hover { background: var(--chomp-red-dark); transform: translateY(-1px); box-shadow: 0 8px 30px rgba(255,45,85,0.3); }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh; display: flex; align-items: center; justify-content: center;
+    padding: 8rem 2rem 4rem; position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: ''; position: absolute; top: -20%; left: 50%; transform: translateX(-50%);
+    width: 800px; height: 800px;
+    background: radial-gradient(circle, rgba(255,45,85,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-inner {
+    max-width: 1100px; width: 100%; display: grid;
+    grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; position: relative;
+  }
+  .hero-content { animation: slideUp 0.8s ease-out; }
+  @keyframes slideUp { from { opacity:0; transform:translateY(40px); } to { opacity:1; transform:translateY(0); } }
+
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    padding: 0.4rem 1rem; background: rgba(255,45,85,0.1);
+    border: 1px solid rgba(255,45,85,0.25); border-radius: 100px;
+    font-size: 0.8rem; font-weight: 600; color: var(--chomp-red);
+    margin-bottom: 1.5rem; letter-spacing: 0.05em; text-transform: uppercase;
+  }
+  .hero-badge .pulse { width:8px; height:8px; background:var(--chomp-red); border-radius:50%; animation: pulse 2s ease infinite; }
+  @keyframes pulse { 0%,100%{opacity:1;transform:scale(1);} 50%{opacity:0.5;transform:scale(1.5);} }
+
+  .hero h1 {
+    font-family: var(--font-display); font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 900; line-height: 1.05; letter-spacing: -0.03em; margin-bottom: 1.5rem;
+  }
+  .hero h1 .gradient {
+    background: linear-gradient(135deg, var(--chomp-red), var(--chomp-orange));
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  }
+  .hero p { font-size: 1.15rem; color: var(--chomp-muted); line-height: 1.7; margin-bottom: 2rem; max-width: 480px; }
+
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: 0.75rem;
+    padding: 1rem 2rem; background: var(--chomp-red); color: white; border: none;
+    border-radius: 14px; font-family: var(--font-body); font-weight: 700; font-size: 1rem;
+    cursor: pointer; transition: all 0.3s ease; text-decoration: none;
+  }
+  .btn-primary:hover { background: var(--chomp-red-dark); transform: translateY(-2px); box-shadow: 0 12px 40px rgba(255,45,85,0.35); }
+  .btn-primary svg { width:22px; height:22px; }
+
+  /* PHONE MOCKUP */
+  .hero-visual { display: flex; justify-content: center; animation: slideUp 1s ease-out 0.2s both; }
+  .phone-frame {
+    width: 280px; height: 570px; background: var(--chomp-surface);
+    border-radius: 40px; border: 3px solid rgba(255,255,255,0.08);
+    box-shadow: 0 40px 80px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.03), inset 0 1px 0 rgba(255,255,255,0.06);
+    overflow: hidden; position: relative;
+    transform: perspective(1000px) rotateY(-5deg) rotateX(2deg);
+    transition: transform 0.5s ease;
+  }
+  .phone-frame:hover { transform: perspective(1000px) rotateY(0) rotateX(0); }
+  .phone-notch {
+    width: 120px; height: 28px; background: var(--chomp-darker);
+    border-radius: 0 0 18px 18px; margin: 0 auto; position: relative; z-index: 2;
+  }
+  .phone-screen { padding: 0.75rem 1rem; }
+  .phone-header { text-align: center; margin-bottom: 0.75rem; }
+  .phone-header .app-name { font-family: var(--font-display); font-size: 1.1rem; font-weight: 700; }
+  .phone-header .sub-count { font-size: 0.7rem; color: var(--chomp-muted); }
+
+  .spending-ring {
+    width: 140px; height: 140px; margin: 0 auto 0.75rem; position: relative;
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    background: conic-gradient(var(--chomp-red) 0deg, var(--chomp-red) 200deg, var(--chomp-orange) 200deg, var(--chomp-orange) 280deg, var(--chomp-teal) 280deg, var(--chomp-teal) 330deg, rgba(255,255,255,0.06) 330deg);
+  }
+  .spending-ring-inner {
+    width: 110px; height: 110px; background: var(--chomp-surface);
+    border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center;
+  }
+  .spending-ring-inner .label { font-size: 0.55rem; color: var(--chomp-muted); text-transform: uppercase; letter-spacing: 0.1em; }
+  .spending-ring-inner .amount { font-family: var(--font-display); font-size: 1.6rem; font-weight: 900; }
+  .spending-ring-inner .status { font-size: 0.55rem; color: var(--chomp-teal); }
+
+  .mock-sub {
+    display: flex; align-items: center; gap: 0.5rem;
+    padding: 0.5rem 0.65rem; margin-bottom: 0.4rem;
+    background: var(--chomp-surface-light); border-radius: 10px;
+    border-left: 3px solid var(--chomp-red);
+  }
+  .mock-sub.streaming { border-color: var(--chomp-red); }
+  .mock-sub.ai { border-color: #8B5CF6; }
+  .mock-sub.fitness { border-color: var(--chomp-orange); }
+  .mock-sub.storage { border-color: #3B82F6; }
+  .mock-sub-icon {
+    width: 28px; height: 28px; border-radius: 7px; display: flex; align-items: center; justify-content: center;
+    font-size: 0.65rem; font-weight: 700; color: white;
+  }
+  .mock-sub-info { flex: 1; }
+  .mock-sub-name { font-size: 0.7rem; font-weight: 600; }
+  .mock-sub-detail { font-size: 0.55rem; color: var(--chomp-muted); }
+  .mock-sub-price { font-size: 0.75rem; font-weight: 700; text-align: right; }
+  .mock-sub-cycle { font-size: 0.5rem; color: var(--chomp-muted); }
+
+  /* FEATURES */
+  .features {
+    padding: 6rem 2rem; max-width: 1100px; margin: 0 auto;
+  }
+  .section-label {
+    font-size: 0.8rem; font-weight: 600; color: var(--chomp-red);
+    text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 0.75rem;
+  }
+  .section-title {
+    font-family: var(--font-display); font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+    font-weight: 900; letter-spacing: -0.02em; margin-bottom: 1rem;
+  }
+  .section-desc { color: var(--chomp-muted); font-size: 1.05rem; max-width: 600px; margin-bottom: 3rem; line-height: 1.7; }
+
+  .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+  .feature-card {
+    background: var(--chomp-surface); border: 1px solid rgba(255,255,255,0.04);
+    border-radius: 16px; padding: 2rem; transition: all 0.3s ease;
+  }
+  .feature-card:hover { border-color: rgba(255,45,85,0.2); transform: translateY(-4px); box-shadow: 0 20px 60px rgba(0,0,0,0.3); }
+  .feature-icon {
+    width: 48px; height: 48px; border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.4rem; margin-bottom: 1.25rem;
+  }
+  .feature-card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.5rem; }
+  .feature-card p { font-size: 0.9rem; color: var(--chomp-muted); line-height: 1.6; }
+
+  /* TRAP SCANNER SPOTLIGHT */
+  .trap-section {
+    padding: 6rem 2rem; max-width: 1100px; margin: 0 auto;
+  }
+  .trap-demo {
+    background: var(--chomp-surface); border: 1px solid rgba(255,255,255,0.04);
+    border-radius: 20px; padding: 2.5rem; position: relative; overflow: hidden;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;
+  }
+  .trap-content h3 {
+    font-family: var(--font-display); font-size: 1.8rem; font-weight: 900;
+    letter-spacing: -0.02em; margin-bottom: 1rem;
+  }
+  .trap-content p { color: var(--chomp-muted); line-height: 1.7; margin-bottom: 1.5rem; }
+  .trap-findings { display: flex; flex-direction: column; gap: 0.75rem; }
+  .trap-finding {
+    display: flex; align-items: center; gap: 0.75rem;
+    padding: 0.75rem 1rem; background: rgba(255,45,85,0.06);
+    border: 1px solid rgba(255,45,85,0.15); border-radius: 10px;
+    font-size: 0.85rem; font-weight: 500;
+  }
+  .trap-finding .warn { color: var(--chomp-red); font-size: 1.1rem; }
+  .trap-visual {
+    background: var(--chomp-surface-light); border-radius: 14px;
+    padding: 2rem; position: relative; overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.04);
+  }
+  .scan-line {
+    position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    background: linear-gradient(90deg, transparent, var(--chomp-red), transparent);
+    animation: scanMove 3s ease-in-out infinite;
+  }
+  @keyframes scanMove { 0%{top:0;} 50%{top:100%;} 100%{top:0;} }
+  .scan-text { font-size: 0.8rem; color: var(--chomp-muted); line-height: 2; }
+  .scan-text .highlight {
+    background: rgba(255,45,85,0.15); color: var(--chomp-red);
+    padding: 0.1rem 0.4rem; border-radius: 4px; font-weight: 600;
+  }
+
+  /* PRICING */
+  .pricing { padding: 6rem 2rem; max-width: 900px; margin: 0 auto; text-align: center; }
+  .pricing-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 3rem; }
+  .price-card {
+    background: var(--chomp-surface); border: 1px solid rgba(255,255,255,0.04);
+    border-radius: 20px; padding: 2.5rem 2rem; text-align: left; transition: all 0.3s;
+  }
+  .price-card.pro {
+    border-color: rgba(255,45,85,0.3);
+    background: linear-gradient(160deg, var(--chomp-surface) 0%, rgba(255,45,85,0.05) 100%);
+  }
+  .price-card.pro:hover { border-color: var(--chomp-red); box-shadow: 0 0 60px rgba(255,45,85,0.15); }
+  .price-tag { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--chomp-muted); margin-bottom: 0.5rem; }
+  .price-amount { font-family: var(--font-display); font-size: 2.5rem; font-weight: 900; margin-bottom: 0.25rem; }
+  .price-note { font-size: 0.85rem; color: var(--chomp-muted); margin-bottom: 1.5rem; }
+  .price-features { list-style: none; }
+  .price-features li {
+    padding: 0.4rem 0; font-size: 0.9rem; color: var(--chomp-muted);
+    display: flex; align-items: center; gap: 0.5rem;
+  }
+  .price-features li .check { color: var(--chomp-teal); font-weight: 700; }
+  .price-features li .lock { color: var(--chomp-muted); opacity: 0.4; }
+
+  /* CTA */
+  .final-cta {
+    padding: 6rem 2rem; text-align: center; position: relative;
+  }
+  .final-cta::before {
+    content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
+    width: 600px; height: 400px;
+    background: radial-gradient(circle, rgba(255,45,85,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .final-cta h2 {
+    font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 900; letter-spacing: -0.02em; margin-bottom: 1rem;
+  }
+  .final-cta p { color: var(--chomp-muted); font-size: 1.1rem; margin-bottom: 2rem; }
+
+  /* FOOTER */
+  footer {
+    padding: 3rem 2rem; text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.04);
+  }
+  .footer-logo {
+    font-family: var(--font-display); font-weight: 900; font-size: 1.2rem;
+    background: linear-gradient(135deg, var(--chomp-red), var(--chomp-orange));
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    margin-bottom: 0.5rem;
+  }
+  .footer-text { color: var(--chomp-muted); font-size: 0.85rem; margin-bottom: 1rem; }
+  .footer-links { display: flex; justify-content: center; gap: 1.5rem; }
+  .footer-links a { color: var(--chomp-muted); text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
+  .footer-links a:hover { color: var(--chomp-white); }
+
+  /* SCROLL REVEAL */
+  .reveal { opacity: 0; transform: translateY(30px); transition: all 0.7s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* PRIVACY PAGE */
+  .privacy-page { display: none; padding: 6rem 2rem 4rem; max-width: 720px; margin: 0 auto; }
+  .privacy-page.active { display: block; }
+  .landing-page.hidden { display: none; }
+  .privacy-page h1 { font-family: var(--font-display); font-size: 2rem; margin-bottom: 0.25rem; }
+  .privacy-page .subtitle { color: var(--chomp-muted); font-size: 0.95rem; margin-bottom: 0.5rem; }
+  .privacy-page .updated { color: var(--chomp-muted); font-size: 0.85rem; margin-bottom: 2.5rem; }
+  .privacy-page .tldr {
+    background: var(--chomp-surface); border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 12px; padding: 1.5rem; margin-bottom: 2.5rem;
+  }
+  .privacy-page .tldr h2 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--chomp-red); margin-bottom: 0.75rem; }
+  .privacy-page .tldr p { color: var(--chomp-muted); font-size: 0.95rem; margin: 0; }
+  .privacy-page h2 { font-size: 1.2rem; font-weight: 600; margin-top: 2.5rem; margin-bottom: 0.75rem; }
+  .privacy-page p, .privacy-page li { color: var(--chomp-white); font-size: 0.95rem; line-height: 1.7; margin-bottom: 0.75rem; }
+  .privacy-page ul { padding-left: 1.25rem; margin-bottom: 1rem; }
+  .privacy-page li { margin-bottom: 0.4rem; }
+  .privacy-page table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.9rem; }
+  .privacy-page th, .privacy-page td { text-align: left; padding: 0.6rem 0.75rem; border-bottom: 1px solid rgba(255,255,255,0.06); }
+  .privacy-page th { color: var(--chomp-muted); font-weight: 600; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; }
+  .privacy-page a { color: var(--chomp-red); text-decoration: none; }
+  .privacy-page a:hover { text-decoration: underline; }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    .hero-inner { grid-template-columns: 1fr; text-align: center; gap: 2rem; }
+    .hero p { margin: 0 auto 2rem; }
+    .trap-demo { grid-template-columns: 1fr; }
+    .pricing-grid { grid-template-columns: 1fr; }
+    .nav-links { display: none; }
+    .phone-frame { width: 240px; height: 490px; transform: none; }
+    .phone-frame:hover { transform: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo"><a href="#" onclick="showLanding(); return false;" style="-webkit-text-fill-color: inherit; text-decoration: none;">CHOMPD</a></div>
+  <div class="nav-links">
+    <a href="#features" onclick="showLanding()">Features</a>
+    <a href="#pricing" onclick="showLanding()">Pricing</a>
+    <a href="#" onclick="showPrivacy(); return false;">Privacy</a>
+  </div>
+  <a href="#" class="nav-cta">
+    <svg viewBox="0 0 24 24" fill="currentColor" style="width:16px;height:16px;vertical-align:middle;margin-right:4px;"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+    App Store
+  </a>
+</nav>
+
+<!-- LANDING PAGE -->
+<div class="landing-page" id="landing">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-badge"><span class="pulse"></span> Now on iOS</div>
+      <h1>Bite back at<br><span class="gradient">subscriptions.</span></h1>
+      <p>Track every subscription, catch hidden traps with AI, and stop overpaying. Chompd puts you back in control of your money.</p>
+      <a href="#" class="btn-primary">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+        Download on the App Store
+      </a>
+    </div>
+    <div class="hero-visual">
+      <div class="phone-frame">
+        <div class="phone-notch"></div>
+        <div class="phone-screen">
+          <div class="phone-header">
+            <div class="app-name">Chompd</div>
+            <div class="sub-count">7 active · 0 cancelled</div>
+          </div>
+          <div class="spending-ring">
+            <div class="spending-ring-inner">
+              <span class="label">Monthly</span>
+              <span class="amount">£83.99</span>
+              <span class="status">On budget</span>
+            </div>
+          </div>
+          <div class="mock-sub streaming">
+            <div class="mock-sub-icon" style="background:#E50914;">N</div>
+            <div class="mock-sub-info"><div class="mock-sub-name">Netflix</div><div class="mock-sub-detail">Renews in 29 days</div></div>
+            <div><div class="mock-sub-price">£15.99</div><div class="mock-sub-cycle">/mo</div></div>
+          </div>
+          <div class="mock-sub ai">
+            <div class="mock-sub-icon" style="background:#10A37F;">G</div>
+            <div class="mock-sub-info"><div class="mock-sub-name">ChatGPT Plus</div><div class="mock-sub-detail">Renews in 2 days</div></div>
+            <div><div class="mock-sub-price">99.99 zł</div><div class="mock-sub-cycle">/mo</div></div>
+          </div>
+          <div class="mock-sub fitness">
+            <div class="mock-sub-icon" style="background:#FC4C02;">S</div>
+            <div class="mock-sub-info"><div class="mock-sub-name">Strava</div><div class="mock-sub-detail">Renews 18 Apr</div></div>
+            <div><div class="mock-sub-price">149.99 zł</div><div class="mock-sub-cycle">/yr</div></div>
+          </div>
+          <div class="mock-sub storage">
+            <div class="mock-sub-icon" style="background:#3478F6;">iC</div>
+            <div class="mock-sub-info"><div class="mock-sub-name">iCloud+ 2TB</div><div class="mock-sub-detail">Renews in 26 days</div></div>
+            <div><div class="mock-sub-price">49.99 zł</div><div class="mock-sub-cycle">/mo</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRAP SCANNER -->
+<section class="trap-section">
+  <div class="reveal">
+    <div class="section-label">AI-Powered</div>
+    <div class="section-title">Trap Scanner</div>
+    <div class="section-desc">Screenshot any signup page. Our AI instantly spots the traps companies don't want you to see.</div>
+  </div>
+  <div class="trap-demo reveal">
+    <div class="trap-content">
+      <h3>See what they're <span style="color:var(--chomp-red);">hiding</span></h3>
+      <p>Auto-renewals buried in fine print. Cancellation barriers designed to keep you paying. Price increases you never agreed to. Chompd catches them all.</p>
+      <div class="trap-findings">
+        <div class="trap-finding"><span class="warn">⚠️</span> Auto-renewal after 7-day trial at £12.99/mo</div>
+        <div class="trap-finding"><span class="warn">🔒</span> Cancellation requires phone call to support</div>
+        <div class="trap-finding"><span class="warn">📈</span> Price increase clause hidden in terms</div>
+      </div>
+    </div>
+    <div class="trap-visual">
+      <div class="scan-line"></div>
+      <div class="scan-text">
+        By signing up, you agree to our Terms of Service. Your <span class="highlight">free trial will automatically convert to a paid subscription</span> at the end of the trial period. Subscription fees are <span class="highlight">non-refundable</span>. You may cancel at any time by <span class="highlight">contacting our support team during business hours (Mon-Fri, 9am-5pm EST)</span>. We reserve the right to <span class="highlight">adjust pricing with 30 days notice</span> sent to the email address on file.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="features" id="features">
+  <div class="reveal">
+    <div class="section-label">Everything you need</div>
+    <div class="section-title">Take control</div>
+    <div class="section-desc">A complete toolkit to track, manage, and optimise every subscription you have.</div>
+  </div>
+  <div class="feature-grid">
+    <div class="feature-card reveal">
+      <div class="feature-icon" style="background:rgba(255,45,85,0.1);">🔍</div>
+      <h3>AI Trap Scanner</h3>
+      <p>Screenshot any signup page and our AI instantly identifies hidden traps — auto-renewals, cancellation barriers, and price increase clauses.</p>
+    </div>
+    <div class="feature-card reveal">
+      <div class="feature-icon" style="background:rgba(255,107,53,0.1);">📊</div>
+      <h3>Spending Dashboard</h3>
+      <p>See your total monthly spend at a glance with category breakdowns. Set budgets and get alerts when you're overspending.</p>
+    </div>
+    <div class="feature-card reveal">
+      <div class="feature-icon" style="background:rgba(139,92,246,0.1);">🔔</div>
+      <h3>Renewal Alerts</h3>
+      <p>Never get surprised by a charge again. Get notified before every renewal so you can decide whether to keep or cancel.</p>
+    </div>
+    <div class="feature-card reveal">
+      <div class="feature-icon" style="background:rgba(59,130,246,0.1);">✨</div>
+      <h3>AI Money-Saving Insights</h3>
+      <p>Personalised tips to reduce your spending — switch to annual plans, find cheaper alternatives, and spot overlap between services.</p>
+    </div>
+    <div class="feature-card reveal">
+      <div class="feature-icon" style="background:rgba(27,143,106,0.1);">📅</div>
+      <h3>Renewal Calendar</h3>
+      <p>See every upcoming payment on a calendar view. Spot expensive days and plan ahead.</p>
+    </div>
+    <div class="feature-card reveal">
+      <div class="feature-icon" style="background:rgba(255,210,63,0.1);">🏷️</div>
+      <h3>Cancel Guides</h3>
+      <p>Step-by-step cancellation instructions for every service. Deep links, difficulty ratings, and refund templates included.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing" id="pricing">
+  <div class="reveal">
+    <div class="section-label">Simple pricing</div>
+    <div class="section-title">No traps. Obviously.</div>
+    <div class="section-desc" style="margin:0 auto 3rem;">One price. Pay once. Keep forever. We're not going to do you dirty.</div>
+  </div>
+  <div class="pricing-grid">
+    <div class="price-card reveal">
+      <div class="price-tag">Free</div>
+      <div class="price-amount">£0</div>
+      <div class="price-note">Free forever</div>
+      <ul class="price-features">
+        <li><span class="check">✓</span> Track unlimited subscriptions</li>
+        <li><span class="check">✓</span> Spending dashboard &amp; budget</li>
+        <li><span class="check">✓</span> Renewal calendar</li>
+        <li><span class="check">✓</span> Morning-of renewal reminders</li>
+        <li><span class="check">✓</span> Cancel guides</li>
+        <li><span class="lock">✗</span> AI Trap Scanner</li>
+        <li><span class="lock">✗</span> AI Insights</li>
+        <li><span class="lock">✗</span> Advance reminders</li>
+      </ul>
+    </div>
+    <div class="price-card pro reveal">
+      <div class="price-tag" style="color:var(--chomp-red);">Pro — One-Time Purchase</div>
+      <div class="price-amount">£4.99</div>
+      <div class="price-note">Pay once, keep forever. 7-day free trial.</div>
+      <ul class="price-features">
+        <li><span class="check">✓</span> Everything in Free</li>
+        <li><span class="check">✓</span> AI Trap Scanner — unlimited scans</li>
+        <li><span class="check">✓</span> AI Money-Saving Insights</li>
+        <li><span class="check">✓</span> Advance renewal reminders</li>
+        <li><span class="check">✓</span> Priority support</li>
+        <li><span class="check">✓</span> All future Pro features</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <div class="reveal">
+    <h2>Stop getting <span style="color:var(--chomp-red);">chomped.</span></h2>
+    <p>Take control of your subscriptions today. Your wallet will thank you.</p>
+    <a href="#" class="btn-primary" style="font-size:1.1rem; padding:1.1rem 2.5rem;">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+      Download on the App Store
+    </a>
+  </div>
+</section>
+
+</div><!-- end landing -->
+
+<!-- PRIVACY PAGE -->
+<div class="privacy-page" id="privacy">
+  <h1>Privacy Policy</h1>
+  <p class="subtitle">Chompd — Subscription Tracker</p>
+  <p class="updated">Last updated: February 2026</p>
+
+  <div class="tldr">
+    <h2>The Short Version</h2>
+    <p>Chompd keeps your data private. Your subscriptions are stored on your device and optionally synced to a secure cloud database tied to an anonymous account — no email, no name, no tracking. We use AI to scan screenshots and generate money-saving insights. We don't run analytics, we don't show ads, and we don't sell your data. That's it.</p>
+  </div>
+
+  <h2>1. Who We Are</h2>
+  <p>Chompd is developed by Piotr Michaliszyn, a sole trader based in Poland. For the purposes of the EU General Data Protection Regulation (GDPR), UK GDPR, and all applicable data protection laws worldwide, the data controller is Piotr Michaliszyn.</p>
+  <p>Contact: <a href="mailto:chompdapp@gmail.com">chompdapp@gmail.com</a></p>
+
+  <h2>2. Accounts and Authentication</h2>
+  <p>When you first open Chompd, an anonymous account is automatically created via our cloud provider (Supabase). This account:</p>
+  <ul>
+    <li>Does not require an email address, name, or password</li>
+    <li>Is identified only by a randomly generated unique ID</li>
+    <li>Enables cloud sync of your subscription data across sessions</li>
+    <li>Cannot be linked to your real identity by us or any third party</li>
+  </ul>
+  <p>You may optionally link your account to Apple Sign-In in the future for backup and recovery purposes.</p>
+
+  <h2>3. What Data We Store</h2>
+  <p>Your subscription data (names, amounts, renewal dates, categories, billing cycles) is stored in two places:</p>
+  <ul>
+    <li><strong>On your device</strong> — in a local database for offline access</li>
+    <li><strong>In our cloud database</strong> — hosted by Supabase (servers in the EU) and tied to your anonymous account ID, enabling sync and AI-powered features</li>
+  </ul>
+  <p>This data contains only what you enter about your subscriptions. It is not linked to your name, email, or any other personal identifier.</p>
+
+  <h2>4. AI Trap Scanner</h2>
+  <p>When you use the AI Trap Scanner, the screenshot or photo you provide is sent to a third-party AI service (Anthropic's Claude API) for analysis. This is necessary to detect subscription traps such as hidden auto-renewals, cancellation barriers, and price increases.</p>
+  <ul>
+    <li>The image is sent directly from your device to Anthropic's API servers</li>
+    <li>The image is used solely to generate the scan result and is not stored by Anthropic beyond the API request</li>
+    <li>No personal identifiers (name, email, device ID) are attached to the request</li>
+    <li>Scan results are stored locally on your device and in your cloud account</li>
+  </ul>
+  <p>Anthropic's data handling is governed by their privacy policy at <a href="https://www.anthropic.com/privacy">anthropic.com/privacy</a>.</p>
+  <p><strong>Legal basis (GDPR):</strong> Processing is based on your consent. You choose when to use the Trap Scanner.</p>
+
+  <h2>5. AI-Powered Insights</h2>
+  <p>If you are a Chompd Pro user, we periodically generate personalised money-saving insights using AI (Anthropic's Claude API). To do this:</p>
+  <ul>
+    <li>Your subscription names, prices, billing cycles, and renewal dates are sent to the AI service</li>
+    <li>No personal identifiers are included — only subscription data</li>
+    <li>Generated insights are stored in your cloud account and synced to your device</li>
+    <li>This processing happens automatically on a regular schedule (approximately every two weeks)</li>
+  </ul>
+  <p><strong>Legal basis (GDPR):</strong> Processing is based on legitimate interest (providing the Pro service you purchased) and your implicit consent by purchasing Pro.</p>
+
+  <h2>6. Service Database</h2>
+  <p>Chompd connects to our cloud database to retrieve information about subscription services, such as names, descriptions, cancellation guides, and pricing tiers. These are read-only lookups. No personal data is sent — only the name of the service you are searching for.</p>
+
+  <h2>7. Local Notifications</h2>
+  <p>If you enable renewal reminders, Chompd schedules notifications locally on your device using the operating system's built-in notification service. These are not sent through our servers. No data leaves your device.</p>
+
+  <h2>8. In-App Purchases</h2>
+  <p>Chompd Pro is available as a one-time In-App Purchase through Apple's App Store. All payment processing is handled entirely by Apple. We do not receive, process, or store any payment information. See <a href="https://www.apple.com/legal/privacy/">Apple's privacy policy</a> for details.</p>
+
+  <h2>9. What We Do NOT Collect</h2>
+  <p>To be explicit, Chompd does not collect:</p>
+  <ul>
+    <li>Names, email addresses, or passwords (there is no registration)</li>
+    <li>Device identifiers or advertising IDs</li>
+    <li>Location data</li>
+    <li>Usage analytics or behavioural tracking</li>
+    <li>Crash reports or diagnostics</li>
+    <li>Cookies or tracking pixels</li>
+    <li>Data from other apps on your device</li>
+  </ul>
+
+  <h2>10. Third-Party Services</h2>
+  <table>
+    <thead><tr><th>Service</th><th>Purpose</th><th>Data Sent</th></tr></thead>
+    <tbody>
+      <tr><td>Anthropic (Claude API)</td><td>AI Trap Scanner &amp; Insights</td><td>Image content / subscription data, no personal identifiers</td></tr>
+      <tr><td>Supabase</td><td>Cloud database &amp; authentication</td><td>Anonymous account ID, subscription data</td></tr>
+      <tr><td>Apple App Store</td><td>In-App Purchases</td><td>Handled entirely by Apple</td></tr>
+    </tbody>
+  </table>
+  <p>We do not use any third-party analytics, advertising, or tracking services.</p>
+
+  <h2>11. Data Retention</h2>
+  <p>Your cloud data is retained as long as your anonymous account exists. You can delete all your data at any time by:</p>
+  <ul>
+    <li>Deleting individual subscriptions within the app</li>
+    <li>Uninstalling the app (removes local data)</li>
+    <li>Contacting us at <a href="mailto:chompdapp@gmail.com">chompdapp@gmail.com</a> to request full account deletion</li>
+  </ul>
+  <p>AI scan images are processed in real-time and are not retained by us or by Anthropic beyond the API request.</p>
+
+  <h2>12. International Data Transfers</h2>
+  <p>Our cloud database is hosted by Supabase in the European Union. When you use the AI Trap Scanner or AI Insights features, data is sent to Anthropic's servers in the United States. This transfer is:</p>
+  <ul>
+    <li>Necessary to provide the AI-powered features</li>
+    <li>Limited to subscription data and scan images only — no personal identifiers</li>
+    <li>Subject to Anthropic's data protection measures as described in their privacy policy</li>
+  </ul>
+
+  <h2>13. Your Rights</h2>
+  <p>Depending on your location, you may have the following rights:</p>
+  <ul>
+    <li><strong>Access</strong> your data — contact us and we can provide any cloud data associated with your anonymous account ID</li>
+    <li><strong>Delete</strong> your data — uninstall the app or contact us for full cloud deletion</li>
+    <li><strong>Export</strong> your data — Chompd offers a CSV export feature</li>
+    <li><strong>Restrict processing</strong> — you can stop using AI features at any time</li>
+    <li><strong>Withdraw consent</strong> — stop using the Trap Scanner or contact us to disable AI Insights</li>
+    <li><strong>Lodge a complaint</strong> with your local data protection authority</li>
+  </ul>
+  <p>For EU residents: <a href="https://edpb.europa.eu/about-edpb/about-edpb/members_en">find your supervisory authority</a>. Poland: <a href="https://uodo.gov.pl">UODO</a>. UK: <a href="https://ico.org.uk">ICO</a>.</p>
+
+  <h2>14. Children's Privacy</h2>
+  <p>Chompd is not directed at children under the age of 16. Since the app uses anonymous accounts and does not collect personal information, no age verification is implemented.</p>
+
+  <h2>15. California Residents (CCPA/CPRA)</h2>
+  <p>Chompd does not sell or share personal information as defined by the California Consumer Privacy Act. California residents have the same rights described in Section 13.</p>
+
+  <h2>16. Changes to This Policy</h2>
+  <p>If we make changes to this privacy policy, we will update the "Last updated" date at the top. For significant changes, we will notify you through the app.</p>
+
+  <h2>17. Contact Us</h2>
+  <p>Email: <a href="mailto:chompdapp@gmail.com">chompdapp@gmail.com</a><br>
+  Website: <a href="https://getchompd.com">getchompd.com</a></p>
+
+  <div style="margin-top:3rem; padding-top:1.5rem; border-top:1px solid rgba(255,255,255,0.06); color:var(--chomp-muted); font-size:0.85rem; text-align:center;">
+    &copy; 2026 Chompd. All rights reserved.
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">CHOMPD</div>
+  <p class="footer-text">Bite back at subscriptions. Built with 🦷 by an indie dev in Poland.</p>
+  <div class="footer-links">
+    <a href="#" onclick="showPrivacy(); return false;">Privacy Policy</a>
+    <a href="mailto:chompdapp@gmail.com">Support</a>
+  </div>
+</footer>
+
+<script>
+  // Page switching
+  function showPrivacy() {
+    document.getElementById('landing').classList.add('hidden');
+    document.getElementById('privacy').classList.add('active');
+    window.scrollTo(0, 0);
+    history.pushState(null, '', '/privacy');
+  }
+  function showLanding() {
+    document.getElementById('landing').classList.remove('hidden');
+    document.getElementById('privacy').classList.remove('active');
+    history.pushState(null, '', '/');
+  }
+
+  // Handle direct /privacy URL and back button
+  window.addEventListener('popstate', () => {
+    if (location.pathname === '/privacy') showPrivacy();
+    else showLanding();
+  });
+  if (location.pathname === '/privacy' || location.hash === '#privacy') showPrivacy();
+
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
