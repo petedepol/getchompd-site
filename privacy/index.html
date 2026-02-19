@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy — Chompd</title>
+    <meta name="description" content="Chompd's privacy policy. We keep your data private — no tracking, no analytics, no data sales. Anonymous accounts, on-device storage, EU-hosted cloud.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..800;1,9..40,300..800&family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-deep: #080e0c;
+            --bg-card: #0f1916;
+            --bg-elevated: #182a26;
+            --text-primary: #eaf0ee;
+            --text-secondary: #8a9e97;
+            --text-muted: #546b64;
+            --accent: #4ecdc4;
+            --accent-glow: rgba(78, 205, 196, 0.12);
+            --border: rgba(78, 205, 196, 0.08);
+            --border-accent: rgba(78, 205, 196, 0.25);
+            --radius: 16px;
+            --radius-sm: 10px;
+            --font-display: 'Fraunces', Georgia, serif;
+            --font-body: 'DM Sans', -apple-system, sans-serif;
+        }
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: var(--font-body); background: var(--bg-deep); color: var(--text-primary); line-height: 1.7; -webkit-font-smoothing: antialiased; }
+
+        nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 16px 24px; background: rgba(8, 14, 12, 0.85); backdrop-filter: blur(24px); border-bottom: 1px solid var(--border); }
+        .nav-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        .nav-logo { display: flex; align-items: center; gap: 10px; font-family: var(--font-display); font-weight: 700; font-size: 1.25rem; color: var(--text-primary); text-decoration: none; }
+        .nav-logo img { width: 32px; height: 32px; border-radius: 8px; }
+        .nav-logo .logo-d { color: var(--accent); }
+        .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
+        .nav-links a { color: var(--text-secondary); text-decoration: none; font-size: 0.9rem; font-weight: 500; }
+        .nav-links a:hover { color: var(--text-primary); }
+        .nav-cta { background: var(--accent) !important; color: var(--bg-deep) !important; padding: 8px 20px !important; border-radius: 100px; font-weight: 700 !important; }
+
+        .article { max-width: 760px; margin: 0 auto; padding: 120px 24px 80px; }
+
+        /* Short version card */
+        .tldr { background: var(--bg-card); border: 1px solid var(--border-accent); border-radius: var(--radius); padding: 28px 32px; margin-bottom: 48px; }
+        .tldr h2 { font-family: var(--font-display); font-size: 1.2rem; font-weight: 700; margin-bottom: 8px; color: var(--accent); }
+        .tldr p { font-size: 0.95rem; color: var(--text-secondary); line-height: 1.7; }
+
+        .article h1 { font-family: var(--font-display); font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 800; line-height: 1.15; margin-bottom: 8px; }
+        .article .updated { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 40px; }
+        .article h2 { font-family: var(--font-display); font-size: 1.35rem; font-weight: 700; margin-top: 48px; margin-bottom: 16px; padding-top: 32px; border-top: 1px solid var(--border); }
+        .article h2:first-of-type { border-top: none; padding-top: 0; margin-top: 0; }
+        .article p { font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 16px; line-height: 1.75; }
+        .article strong { color: var(--text-primary); }
+        .article a { color: var(--accent); }
+        .article ul { list-style: none; margin: 12px 0 20px; }
+        .article ul li { padding: 6px 0; font-size: 0.95rem; color: var(--text-secondary); padding-left: 20px; position: relative; }
+        .article ul li::before { content: '·'; position: absolute; left: 4px; color: var(--accent); font-weight: 700; }
+
+        .data-table { width: 100%; border-collapse: collapse; margin: 16px 0 24px; font-size: 0.88rem; border-radius: var(--radius-sm); overflow: hidden; border: 1px solid var(--border); }
+        .data-table th { background: var(--bg-card); padding: 12px 16px; text-align: left; font-weight: 600; color: var(--text-muted); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid var(--border); }
+        .data-table td { padding: 12px 16px; border-bottom: 1px solid var(--border); color: var(--text-secondary); }
+        .data-table tr:last-child td { border-bottom: none; }
+
+        footer { padding: 40px 24px; border-top: 1px solid var(--border); text-align: center; }
+        .footer-tagline { font-size: 0.78rem; color: var(--text-muted); }
+        footer a { color: var(--text-muted); text-decoration: none; font-size: 0.82rem; margin: 0 12px; }
+        footer a:hover { color: var(--text-secondary); }
+
+        @media (max-width: 640px) { .nav-links { display: none; } }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-inner">
+            <a href="/" class="nav-logo"><img src="/piranha_full.png" alt="Chompd"> CHOMP<span class="logo-d">D</span></a>
+            <ul class="nav-links">
+                <li><a href="/#features">Features</a></li>
+                <li><a href="/#pricing">Pricing</a></li>
+                <li><a href="/#compare">Compare</a></li>
+                <li><a href="#" class="nav-cta">Download</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <article class="article">
+        <h1>Privacy Policy</h1>
+        <p class="updated">Last updated: February 2026</p>
+
+        <div class="tldr">
+            <h2>The Short Version</h2>
+            <p>Chompd keeps your data private. Your subscriptions are stored on your device and optionally synced to a secure cloud database tied to an anonymous account — no email, no name, no tracking. We use AI to scan screenshots and generate money-saving insights. We don't run analytics, we don't show ads, and we don't sell your data. That's it.</p>
+        </div>
+
+        <h2>1. Who We Are</h2>
+        <p>Chompd is developed by Piotr Michaliszyn, a sole trader based in Poland. For the purposes of the EU General Data Protection Regulation (GDPR), UK GDPR, and all applicable data protection laws worldwide, the data controller is Piotr Michaliszyn.</p>
+        <p>Contact: <a href="mailto:chompdapp@gmail.com">chompdapp@gmail.com</a></p>
+
+        <h2>2. Accounts and Authentication</h2>
+        <p>When you first open Chompd, an anonymous account is automatically created via our cloud provider (Supabase). This account:</p>
+        <ul>
+            <li>Does not require an email address, name, or password</li>
+            <li>Is identified only by a randomly generated unique ID</li>
+            <li>Enables cloud sync of your subscription data across sessions</li>
+            <li>Cannot be linked to your real identity by us or any third party</li>
+        </ul>
+        <p>You may optionally link your account to Apple Sign-In in the future for backup and recovery purposes.</p>
+
+        <h2>3. What Data We Store</h2>
+        <p>Your subscription data (names, amounts, renewal dates, categories, billing cycles) is stored in two places:</p>
+        <ul>
+            <li><strong>On your device</strong> — in a local database for offline access</li>
+            <li><strong>In our cloud database</strong> — hosted by Supabase (servers in the EU) and tied to your anonymous account ID, enabling sync and AI-powered features</li>
+        </ul>
+        <p>This data contains only what you enter about your subscriptions. It is not linked to your name, email, or any other personal identifier.</p>
+
+        <h2>4. AI Trap Scanner</h2>
+        <p>When you use the AI Trap Scanner, the screenshot or photo you provide is sent to a third-party AI service (Anthropic's Claude API) for analysis. This is necessary to detect subscription traps such as hidden auto-renewals, cancellation barriers, and price increases.</p>
+        <ul>
+            <li>The image is sent directly from your device to Anthropic's API servers</li>
+            <li>The image is used solely to generate the scan result and is not stored by Anthropic beyond the API request</li>
+            <li>No personal identifiers (name, email, device ID) are attached to the request</li>
+            <li>Scan results are stored locally on your device and in your cloud account</li>
+        </ul>
+        <p>Anthropic's data handling is governed by their privacy policy at <a href="https://www.anthropic.com/privacy">anthropic.com/privacy</a>.</p>
+        <p><strong>Legal basis (GDPR):</strong> Processing is based on your consent. You choose when to use the Trap Scanner.</p>
+
+        <h2>5. AI-Powered Insights</h2>
+        <p>If you are a Chompd Pro user, we periodically generate personalised money-saving insights using AI (Anthropic's Claude API). To do this:</p>
+        <ul>
+            <li>Your subscription names, prices, billing cycles, and renewal dates are sent to the AI service</li>
+            <li>No personal identifiers are included — only subscription data</li>
+            <li>Generated insights are stored in your cloud account and synced to your device</li>
+            <li>This processing happens automatically on a regular schedule (approximately every two weeks)</li>
+        </ul>
+        <p><strong>Legal basis (GDPR):</strong> Processing is based on legitimate interest (providing the Pro service you purchased) and your implicit consent by purchasing Pro.</p>
+
+        <h2>6. Service Database</h2>
+        <p>Chompd connects to our cloud database to retrieve information about subscription services, such as names, descriptions, cancellation guides, and pricing tiers. These are read-only lookups. No personal data is sent — only the name of the service you are searching for.</p>
+
+        <h2>7. Local Notifications</h2>
+        <p>If you enable renewal reminders, Chompd schedules notifications locally on your device using the operating system's built-in notification service. These are not sent through our servers. No data leaves your device.</p>
+
+        <h2>8. In-App Purchases</h2>
+        <p>Chompd Pro is available as a one-time In-App Purchase through Apple's App Store. All payment processing is handled entirely by Apple. We do not receive, process, or store any payment information. See <a href="https://www.apple.com/legal/privacy/">Apple's privacy policy</a> for details.</p>
+
+        <h2>9. What We Do NOT Collect</h2>
+        <p>To be explicit, Chompd does not collect:</p>
+        <ul>
+            <li>Names, email addresses, or passwords (there is no registration)</li>
+            <li>Device identifiers or advertising IDs</li>
+            <li>Location data</li>
+            <li>Usage analytics or behavioural tracking</li>
+            <li>Crash reports or diagnostics</li>
+            <li>Cookies or tracking pixels</li>
+            <li>Data from other apps on your device</li>
+        </ul>
+
+        <h2>10. Third-Party Services</h2>
+        <table class="data-table">
+            <thead><tr><th>Service</th><th>Purpose</th><th>Data Sent</th></tr></thead>
+            <tbody>
+                <tr><td>Anthropic (Claude API)</td><td>AI Trap Scanner & Insights</td><td>Image content / subscription data, no personal identifiers</td></tr>
+                <tr><td>Supabase</td><td>Cloud database & authentication</td><td>Anonymous account ID, subscription data</td></tr>
+                <tr><td>Apple App Store</td><td>In-App Purchases</td><td>Handled entirely by Apple</td></tr>
+            </tbody>
+        </table>
+        <p>We do not use any third-party analytics, advertising, or tracking services.</p>
+
+        <h2>11. Data Retention</h2>
+        <p>Your cloud data is retained as long as your anonymous account exists. You can delete all your data at any time by:</p>
+        <ul>
+            <li>Deleting individual subscriptions within the app</li>
+            <li>Uninstalling the app (removes local data)</li>
+            <li>Contacting us at <a href="mailto:chompdapp@gmail.com">chompdapp@gmail.com</a> to request full account deletion</li>
+        </ul>
+        <p>AI scan images are processed in real-time and are not retained by us or by Anthropic beyond the API request.</p>
+
+        <h2>12. International Data Transfers</h2>
+        <p>Our cloud database is hosted by Supabase in the European Union. When you use the AI Trap Scanner or AI Insights features, data is sent to Anthropic's servers in the United States. This transfer is:</p>
+        <ul>
+            <li>Necessary to provide the AI-powered features</li>
+            <li>Limited to subscription data and scan images only — no personal identifiers</li>
+            <li>Subject to Anthropic's data protection measures as described in their privacy policy</li>
+        </ul>
+
+        <h2>13. Your Rights</h2>
+        <p>Depending on your location, you may have the following rights:</p>
+        <ul>
+            <li><strong>Access</strong> your data — contact us and we can provide any cloud data associated with your anonymous account ID</li>
+            <li><strong>Delete</strong> your data — uninstall the app or contact us for full cloud deletion</li>
+            <li><strong>Export</strong> your data — Chompd offers a CSV export feature</li>
+            <li><strong>Restrict processing</strong> — you can stop using AI features at any time</li>
+            <li><strong>Withdraw consent</strong> — stop using the Trap Scanner or contact us to disable AI Insights</li>
+            <li><strong>Lodge a complaint</strong> with your local data protection authority</li>
+        </ul>
+        <p>For EU residents: <a href="https://edpb.europa.eu/about-edpb/about-edpb/members_en">find your supervisory authority</a>. Poland: <a href="https://uodo.gov.pl">UODO</a>. UK: <a href="https://ico.org.uk">ICO</a>.</p>
+
+        <h2>14. Children's Privacy</h2>
+        <p>Chompd is not directed at children under the age of 16. Since the app uses anonymous accounts and does not collect personal information, no age verification is implemented.</p>
+
+        <h2>15. California Residents (CCPA/CPRA)</h2>
+        <p>Chompd does not sell or share personal information as defined by the California Consumer Privacy Act. California residents have the same rights described in Section 13.</p>
+
+        <h2>16. Changes to This Policy</h2>
+        <p>If we make changes to this privacy policy, we will update the "Last updated" date at the top. For significant changes, we will notify you through the app.</p>
+
+        <h2>17. Contact Us</h2>
+        <p>Email: <a href="mailto:chompdapp@gmail.com">chompdapp@gmail.com</a><br>Website: <a href="https://getchompd.com">getchompd.com</a></p>
+    </article>
+
+    <footer>
+        <a href="/">Home</a> · <a href="/privacy/">Privacy</a> · <a href="mailto:chompdapp@gmail.com">Support</a>
+        <p class="footer-tagline" style="margin-top: 16px;">© 2026 Chompd. All rights reserved.</p>
+    </footer>
+</body>
+</html>
