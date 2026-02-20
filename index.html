@@ -3,11 +3,133 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chompd – Bite Back at Subscriptions | AI Subscription Tracker for iOS</title>
-    <meta name="description" content="AI-powered subscription tracker that catches hidden traps, saves you money, and never asks for your bank account or email. Free on iOS.">
+
+    <!-- SEO Essentials -->
+    <title>Chompd — AI Subscription Tracker That Reads the Fine Print</title>
+    <meta name="description" content="Stop falling for subscription traps. Chompd uses AI to scan fine print, detect hidden fees, and track every subscription. Privacy-first, no bank linking. €5 one-time purchase for iOS.">
+    <meta name="keywords" content="subscription tracker, subscription manager, hidden fees detector, subscription trap scanner, track subscriptions iOS, cancel subscriptions, AI subscription scanner">
+    <link rel="canonical" href="https://getchompd.com/">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Chompd">
+    <meta name="theme-color" content="#080e0c">
+
+    <!-- Apple Smart App Banner — uncomment when App Store ID is available -->
+    <!-- <meta name="apple-itunes-app" content="app-id=YOUR_APP_STORE_ID"> -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Chompd">
+
+    <!-- Open Graph (Facebook, LinkedIn, iMessage, Slack, Discord) -->
+    <meta property="og:title" content="Chompd — AI Subscription Tracker That Reads the Fine Print">
+    <meta property="og:description" content="Stop falling for subscription traps. AI-powered fine print scanning, privacy-first tracking, no bank linking. €5 one-time.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://getchompd.com">
+    <meta property="og:image" content="https://getchompd.com/images/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Chompd AI Subscription Tracker app shown in iPhone mockup">
+    <meta property="og:site_name" content="Chompd">
+    <meta property="og:locale" content="en_GB">
+
+    <!-- Twitter/X Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Chompd — AI That Reads Subscription Fine Print">
+    <meta name="twitter:description" content="Stop falling for subscription traps. Privacy-first iOS tracker. €5 one-time.">
+    <meta name="twitter:image" content="https://getchompd.com/images/og-image.jpg">
+
+    <!-- Favicon (generate from piranha logo using favicon.io) -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+    <!-- Preload critical assets -->
+    <link rel="preload" href="piranha_wave.png" as="image">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..800;1,9..40,300..800&family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&display=swap" rel="stylesheet">
+
+    <!-- Structured Data for Google Rich Results -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MobileApplication",
+      "name": "Chompd",
+      "description": "AI-powered subscription tracker that reads fine print to detect hidden subscription traps. Privacy-first, no bank linking required.",
+      "url": "https://getchompd.com",
+      "image": "https://getchompd.com/images/og-image.jpg",
+      "operatingSystem": "iOS 17.0 or later",
+      "applicationCategory": "FinanceApplication",
+      "inLanguage": ["en", "pl", "de", "fr", "es"],
+      "offers": {
+        "@type": "Offer",
+        "price": "4.99",
+        "priceCurrency": "EUR",
+        "availability": "https://schema.org/InStock"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Pete"
+      }
+    }
+    </script>
+
+    <!-- FAQ Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How does the AI Trap Scanner work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Take a screenshot of any subscription signup page, terms of service, or email confirmation. Chompd's AI analyses the text and flags hidden traps — auto-renewals, cancellation barriers, price increase clauses, and anything else buried in the fine print. Your screenshot is processed securely and never stored."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need to connect my bank account?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Chompd never asks for bank access, email access, or any personal login. You add subscriptions manually or by scanning screenshots. Your financial data stays on your device."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is there a monthly subscription fee?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Chompd Pro is a one-time purchase of €5. The free tier is genuinely free forever with unlimited subscription tracking."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What languages does Chompd support?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "English, Polish, German, French, and Spanish — with more coming based on user feedback."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How is my data protected?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Chompd uses anonymous authentication — no email, no name, no account. Your subscription data is stored locally on your device. Optional cloud sync uses EU-hosted servers and is encrypted in transit. We collect zero analytics and serve zero ads."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I export my data?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Chompd Pro includes CSV export so you can take your data anywhere."
+          }
+        }
+      ]
+    }
+    </script>
+
     <style>
         :root {
             --bg-deep: #080e0c;
@@ -194,6 +316,34 @@
         .footer-right a:hover { color: var(--text-secondary); }
         .footer-tagline { text-align: center; margin-top: 20px; font-size: 0.78rem; color: var(--text-muted); }
 
+        /* FAQ Section */
+        .faq-section { padding: 80px 24px; }
+        .faq-section .container { max-width: 800px; margin: 0 auto; }
+        .faq-list { margin-top: 40px; }
+        .faq-section details { border-bottom: 1px solid var(--border); }
+        .faq-section summary { padding: 20px 0; font-size: 1.05rem; font-weight: 600; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; color: var(--text-primary); transition: color 0.2s; }
+        .faq-section summary::-webkit-details-marker { display: none; }
+        .faq-section summary::after { content: '+'; font-size: 1.4rem; font-weight: 300; color: var(--accent); transition: transform 0.2s; flex-shrink: 0; margin-left: 16px; }
+        .faq-section details[open] summary::after { content: '−'; }
+        .faq-section summary:hover { color: var(--accent); }
+        .faq-section details p { padding: 0 0 20px; font-size: 0.95rem; color: var(--text-secondary); line-height: 1.7; }
+
+        /* Roadmap Section */
+        .roadmap-section { padding: 80px 24px; }
+        .roadmap-section .container { max-width: 1000px; margin: 0 auto; }
+        .roadmap-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 2rem; }
+        .roadmap-column { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; border-top: 3px solid; }
+        .roadmap-column.shipped { border-top-color: #00b894; }
+        .roadmap-column.next { border-top-color: #fdcb6e; }
+        .roadmap-column.horizon { border-top-color: #6c5ce7; }
+        .roadmap-column h3 { margin-bottom: 1rem; font-size: 1.1rem; font-family: var(--font-display); font-weight: 700; }
+        .roadmap-column ul { list-style: none; padding: 0; }
+        .roadmap-column li { padding: 0.5rem 0; border-bottom: 1px solid var(--border); font-size: 0.92rem; color: var(--text-secondary); }
+        .roadmap-column li:last-child { border-bottom: none; }
+        .roadmap-footer { margin-top: 2rem; text-align: center; font-size: 0.95rem; color: var(--text-secondary); }
+        .roadmap-footer a { color: var(--accent); text-decoration: none; }
+        .roadmap-footer a:hover { text-decoration: underline; }
+
         .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
         .reveal.visible { opacity: 1; transform: translateY(0); }
 
@@ -204,13 +354,60 @@
             .pricing-cards { grid-template-columns: 1fr; }
             .how-steps { grid-template-columns: 1fr; gap: 40px; }
             .how-steps::before { display: none; }
-            .trust-grid { grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); }
+            .trust-grid { grid-template-columns: repeat(2, 1fr); }
             .trust-detail-row { grid-template-columns: 1fr; }
             .maker-row { flex-direction: column; align-items: center; text-align: center; }
             .hero-mascot { width: 110px; height: 110px; }
             .footer-inner { flex-direction: column; gap: 16px; text-align: center; }
-            .screenshot-grid { justify-content: flex-start; padding-left: 24px; }
-            .screenshot-frame { width: 180px; }
+
+            /* Features grid — stack vertically */
+            .features-grid {
+                display: flex !important;
+                flex-direction: column !important;
+                gap: 1.5rem;
+            }
+
+            /* Screenshot gallery — horizontal scroll */
+            .screenshot-grid {
+                display: flex !important;
+                flex-direction: row !important;
+                overflow-x: auto !important;
+                scroll-snap-type: x mandatory;
+                -webkit-overflow-scrolling: touch;
+                gap: 1rem;
+                padding: 20px 24px;
+                justify-content: flex-start;
+            }
+            .screenshot-frame {
+                flex-shrink: 0;
+                width: 70vw;
+                max-width: 280px;
+                scroll-snap-align: start;
+            }
+
+            /* Comparison table — horizontal scroll */
+            .compare-table-wrapper {
+                display: block;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            /* General typography mobile fixes */
+            body { font-size: 16px; }
+            h1 { font-size: 2rem; }
+            h2 { font-size: 1.5rem; }
+
+            /* Minimum tap target size for accessibility */
+            a, button, .btn, .hero-cta, .nav-cta { min-height: 48px; }
+
+            /* Hero section padding */
+            .hero { padding: 100px 1rem 40px; }
+
+            /* Roadmap grid stacks on mobile */
+            .roadmap-grid { grid-template-columns: 1fr; }
+
+            /* FAQ details padding */
+            .faq-section details { padding: 0; }
         }
     </style>
 </head>
@@ -223,15 +420,16 @@
                 <li><a href="#how">How it works</a></li>
                 <li><a href="#features">Features</a></li>
                 <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#roadmap">Roadmap</a></li>
                 <li><a href="#compare">Compare</a></li>
-                <li><a href="#" class="nav-cta">Download</a></li>
+                <li><a href="#pricing" class="nav-cta">Download</a></li>
             </ul>
         </div>
     </nav>
 
     <!-- 1. HERO — lead with value -->
     <section class="hero">
-        <img src="piranha_wave.png" alt="Chompd piranha waving hello" class="mascot hero-mascot">
+        <img src="piranha_wave.png" alt="Chompd piranha mascot waving hello" class="mascot hero-mascot" width="140" height="140" loading="eager">
         <div class="hero-badge"><span class="dot"></span> Now on iOS</div>
         <h1>Snap it. Scan it.<br><span class="accent">Stop overpaying.</span></h1>
         <p class="hero-sub">AI-powered subscription tracking that catches hidden traps in fine print, reminds you before renewals, and helps you cancel what you don't need.</p>
@@ -249,8 +447,8 @@
             <div class="how-steps">
                 <div class="how-step reveal">
                     <div class="how-step-icon">📸<div class="how-step-num">1</div></div>
-                    <h3>Snap a screenshot</h3>
-                    <p>Receipt, email, bank statement, or signup page — anything with subscription info.</p>
+                    <h3>Snap or paste</h3>
+                    <p>Screenshot a page, or paste text from email confirmations. Anything with subscription info works.</p>
                 </div>
                 <div class="how-step reveal">
                     <div class="how-step-icon">✨<div class="how-step-num">2</div></div>
@@ -277,7 +475,7 @@
                 <p class="section-subtitle">Screenshot any signup page or terms of service. Chompd's AI instantly spots the traps companies bury in fine print — auto-renewals, cancellation barriers, and hidden price increases.</p>
                 <p class="section-subtitle" style="margin-top: 12px;"><strong style="color: var(--text-primary)">No other subscription app does this.</strong></p>
                 <div class="scanner-mascot-wrapper">
-                    <img src="piranha_thinking.png" alt="Thinking" class="mascot mascot-bounce">
+                    <img src="piranha_thinking.png" alt="Chompd piranha thinking about suspicious fine print" class="mascot mascot-bounce" width="56" height="56" loading="lazy">
                     <span>"Hmm, that fine print looks suspicious..."</span>
                 </div>
             </div>
@@ -302,7 +500,7 @@
             <h2 class="section-title reveal">Everything you need to take control.</h2>
             <div class="features-grid">
                 <div class="feature-card featured reveal">
-                    <img src="piranha_alert.png" alt="Alert" class="mascot feature-mascot">
+                    <img src="piranha_alert.png" alt="Chompd piranha alert about subscription traps" class="mascot feature-mascot" width="56" height="56" loading="lazy">
                     <div class="feature-icon">🔍</div>
                     <h3>AI Trap Scanner</h3>
                     <p>Screenshot any signup page and our AI instantly identifies hidden traps — auto-renewals, cancellation barriers, and price increase clauses buried in the fine print. Paste email confirmations too.</p>
@@ -310,7 +508,7 @@
                 <div class="feature-card reveal"><div class="feature-icon">💡</div><h3>AI Money-Saving Insights</h3><p>Personalised tips to cut spending — switch to annual plans, find cheaper alternatives, and spot overlap between services you're paying for.</p></div>
                 <div class="feature-card reveal"><div class="feature-icon">📊</div><h3>Spending Dashboard</h3><p>See your total monthly spend at a glance with category breakdowns. Set budgets and get alerts when you're going over.</p></div>
                 <div class="feature-card reveal">
-                    <img src="piranha_sleeping.png" alt="Sleeping" class="mascot feature-mascot" style="width: 50px; height: 50px;">
+                    <img src="piranha_sleeping.png" alt="Chompd piranha sleeping peacefully with renewal alerts set" class="mascot feature-mascot" style="width: 50px; height: 50px;" width="50" height="50" loading="lazy">
                     <div class="feature-icon">🔔</div><h3>Renewal Alerts</h3><p>Never get surprised by a charge again. Get notified 7 days, 3 days, and the morning of every renewal.</p>
                 </div>
                 <div class="feature-card reveal"><div class="feature-icon">📅</div><h3>Renewal Calendar</h3><p>See every upcoming payment on a calendar. Spot expensive days and plan ahead.</p></div>
@@ -328,10 +526,10 @@
             <h2 class="section-title reveal">Designed to be simple.</h2>
             <p class="section-subtitle reveal" style="margin: 0 auto;">No clutter, no dark patterns — just a clear view of what you're paying for.</p>
             <div class="screenshot-grid reveal">
-                <div class="screenshot-frame"><img src="screenshots/onboarding.png" alt="Chompd onboarding"></div>
-                <div class="screenshot-frame"><img src="screenshots/dashboard.png" alt="Chompd dashboard"></div>
-                <div class="screenshot-frame"><img src="screenshots/how-it-works.png" alt="How it works"></div>
-                <div class="screenshot-frame"><img src="screenshots/settings.png" alt="Settings"></div>
+                <div class="screenshot-frame"><img src="screenshots/onboarding.png" alt="Chompd app onboarding screen showing quick setup flow" width="1206" height="2622" loading="lazy"></div>
+                <div class="screenshot-frame"><img src="screenshots/dashboard.png" alt="Chompd subscription dashboard showing monthly spending overview" width="1206" height="2622" loading="lazy"></div>
+                <div class="screenshot-frame"><img src="screenshots/how-it-works.png" alt="Chompd how it works screen showing AI scan process" width="1206" height="2622" loading="lazy"></div>
+                <div class="screenshot-frame"><img src="screenshots/settings.png" alt="Chompd settings screen with privacy controls" width="1206" height="2622" loading="lazy"></div>
             </div>
         </div>
     </section>
@@ -347,12 +545,12 @@
                 <p class="section-subtitle">No bank linking. No email access. No analytics. No ads. No data sales. No account required. That's not a disclaimer — it's how Chompd was built.</p>
             </div>
             <div class="trust-grid reveal">
-                <div class="trust-pill"><span class="tp-icon">🏦</span> <span class="strikethrough">Bank linking</span></div>
-                <div class="trust-pill"><span class="tp-icon">📧</span> <span class="strikethrough">Email access</span></div>
-                <div class="trust-pill"><span class="tp-icon">📊</span> <span class="strikethrough">Analytics</span></div>
-                <div class="trust-pill"><span class="tp-icon">📢</span> <span class="strikethrough">Ads</span></div>
-                <div class="trust-pill"><span class="tp-icon">🤝</span> <span class="strikethrough">Data sales</span></div>
-                <div class="trust-pill"><span class="tp-icon">🪪</span> <span class="strikethrough">Registration</span></div>
+                <div class="trust-pill" aria-label="No bank linking required"><span class="tp-icon" aria-hidden="true">🏦</span> <span class="strikethrough">Bank linking</span></div>
+                <div class="trust-pill" aria-label="No email access required"><span class="tp-icon" aria-hidden="true">📧</span> <span class="strikethrough">Email access</span></div>
+                <div class="trust-pill" aria-label="No analytics or tracking"><span class="tp-icon" aria-hidden="true">📊</span> <span class="strikethrough">Analytics</span></div>
+                <div class="trust-pill" aria-label="No advertisements"><span class="tp-icon" aria-hidden="true">📢</span> <span class="strikethrough">Ads</span></div>
+                <div class="trust-pill" aria-label="No data sales"><span class="tp-icon" aria-hidden="true">🤝</span> <span class="strikethrough">Data sales</span></div>
+                <div class="trust-pill" aria-label="No registration required"><span class="tp-icon" aria-hidden="true">🪪</span> <span class="strikethrough">Registration</span></div>
             </div>
             <div class="trust-detail-row reveal">
                 <div class="trust-detail"><div class="td-icon">🔐</div><h4>Anonymous by default</h4><p>No email, no name. Auto-generated anonymous ID. That's your "account."</p></div>
@@ -367,14 +565,14 @@
     <!-- 7. PRICING -->
     <section class="pricing" id="pricing">
         <div class="container">
-            <div class="pricing-header-mascot reveal"><img src="piranha_thumbsup.png" alt="Thumbs up" class="mascot mascot-bounce"></div>
+            <div class="pricing-header-mascot reveal"><img src="piranha_thumbsup.png" alt="Chompd piranha giving thumbs up for transparent pricing" class="mascot mascot-bounce" width="80" height="80" loading="lazy"></div>
             <span class="section-label reveal">💰 Simple pricing</span>
             <h2 class="section-title reveal">No traps. Obviously.</h2>
             <p class="section-subtitle reveal" style="margin-left: auto; margin-right: auto;">One price. Pay once. Keep forever. We're not going to do you dirty.</p>
             <div class="pricing-cards">
                 <div class="price-card reveal">
                     <h3>Free</h3>
-                    <div class="price-amount"><span class="currency">£</span><span class="number">0</span></div>
+                    <div class="price-amount"><span class="currency">€</span><span class="number">0</span></div>
                     <p class="price-note">Free forever</p>
                     <ul class="price-features">
                         <li><span class="check">✓</span> Unlimited subscriptions</li>
@@ -388,9 +586,9 @@
                     </ul>
                 </div>
                 <div class="price-card pro reveal">
-                    <span class="price-tag">7-day free trial</span>
+                    <span class="price-tag">Most popular</span>
                     <h3>Pro</h3>
-                    <div class="price-amount"><span class="currency">£</span><span class="number">4.99</span></div>
+                    <div class="price-amount"><span class="currency">€</span><span class="number">5</span></div>
                     <p class="price-note">One-time purchase · try free for 7 days</p>
                     <ul class="price-features">
                         <li><span class="check">✓</span> Everything in Free</li>
@@ -412,7 +610,7 @@
     <section class="maker reveal">
         <div class="maker-card">
             <div class="maker-row">
-                <div class="maker-mascot"><img src="piranha_thumbsup.png" alt="Thumbs up" class="mascot"></div>
+                <div class="maker-mascot"><img src="piranha_thumbsup.png" alt="Chompd piranha mascot" class="mascot" width="80" height="80" loading="lazy"></div>
                 <div>
                     <p><strong>Hi, I'm Pete.</strong> I built Chompd because I was tired of subscription apps that want your bank login or full email access just to tell you what you're paying for. That felt backwards. So I built an app that uses AI to scan screenshots and text — your data stays on your device, and I never see it. No investors, no ads, no data sales. You pay for the app, that's it.</p>
                     <div class="sig">— Pete, indie dev in Poland 🇵🇱</div>
@@ -431,16 +629,16 @@
             <p class="section-subtitle reveal">We're not trying to be everything. We're trying to be the subscription tracker that actually respects you.</p>
             <div class="compare-table-wrapper reveal">
                 <table class="compare-table">
-                    <thead><tr><th></th><th class="highlight">Chompd</th><th>Rocket Money</th><th>Bobby</th><th>Chargeback</th></tr></thead>
+                    <thead><tr><th></th><th class="highlight">Chompd</th><th>Rocket Money</th><th>Bobby</th><th>Orbit</th><th>Chargeback</th></tr></thead>
                     <tbody>
-                        <tr><td>Price</td><td class="cc"><span class="c-yes">Free + £4.99 once</span></td><td>Free + £6–14/mo</td><td>£1.99 once</td><td><span class="c-warn">£144/year</span></td></tr>
-                        <tr><td>Bank linking required</td><td class="cc"><span class="c-yes">No</span></td><td><span class="c-warn">Yes</span></td><td>No</td><td><span class="c-warn">Yes</span></td></tr>
-                        <tr><td>Email access required</td><td class="cc"><span class="c-yes">No</span></td><td>No</td><td>No</td><td><span class="c-warn">Yes</span></td></tr>
-                        <tr><td>AI-powered detection</td><td class="cc"><span class="c-yes">Yes — screenshot + text</span></td><td>No</td><td>No</td><td>Yes — email scan</td></tr>
-                        <tr><td>Trap / fine print scanner</td><td class="cc"><span class="c-yes">Yes</span></td><td><span class="c-no">No</span></td><td><span class="c-no">No</span></td><td><span class="c-no">No</span></td></tr>
-                        <tr><td>Free tier</td><td class="cc"><span class="c-yes">Yes — generous</span></td><td>Limited</td><td><span class="c-no">No</span></td><td><span class="c-no">No</span></td></tr>
-                        <tr><td>Transparent pricing</td><td class="cc"><span class="c-yes">Yes</span></td><td><span class="c-yes">Yes</span></td><td><span class="c-yes">Yes</span></td><td><span class="c-warn">Hidden in signup</span></td></tr>
-                        <tr><td>Analytics / tracking</td><td class="cc"><span class="c-yes">None</span></td><td>Yes</td><td>Minimal</td><td>Yes</td></tr>
+                        <tr><td>Price</td><td class="cc"><span class="c-yes">Free + €5 once</span></td><td>Free + $6–14/mo</td><td>$2.99 once</td><td>Free + $9.99/yr</td><td><span class="c-warn">$144/year</span></td></tr>
+                        <tr><td>Bank linking required</td><td class="cc"><span class="c-yes">No</span></td><td><span class="c-warn">Yes</span></td><td>No</td><td>No</td><td><span class="c-warn">Yes</span></td></tr>
+                        <tr><td>Email access required</td><td class="cc"><span class="c-yes">No</span></td><td>No</td><td>No</td><td>No</td><td><span class="c-warn">Yes</span></td></tr>
+                        <tr><td>AI-powered detection</td><td class="cc"><span class="c-yes">Yes — screenshot + text</span></td><td>No</td><td>No</td><td>No</td><td>Yes — email scan</td></tr>
+                        <tr><td>Trap / fine print scanner</td><td class="cc"><span class="c-yes">Yes</span></td><td><span class="c-no">No</span></td><td><span class="c-no">No</span></td><td><span class="c-no">No</span></td><td><span class="c-no">No</span></td></tr>
+                        <tr><td>Free tier</td><td class="cc"><span class="c-yes">Yes — generous</span></td><td>Limited</td><td><span class="c-no">No</span></td><td>Limited</td><td><span class="c-no">No</span></td></tr>
+                        <tr><td>Transparent pricing</td><td class="cc"><span class="c-yes">Yes</span></td><td><span class="c-yes">Yes</span></td><td><span class="c-yes">Yes</span></td><td><span class="c-yes">Yes</span></td><td><span class="c-warn">Hidden in signup</span></td></tr>
+                        <tr><td>Analytics / tracking</td><td class="cc"><span class="c-yes">None</span></td><td>Yes</td><td>Minimal</td><td>Minimal</td><td>Yes</td></tr>
                     </tbody>
                 </table>
             </div>
@@ -448,9 +646,103 @@
         </div>
     </section>
 
-    <!-- 10. FINAL CTA -->
+    <!-- 10. FAQ -->
+    <section class="faq-section" id="faq">
+        <div class="container">
+            <span class="section-label reveal">❓ FAQ</span>
+            <h2 class="section-title reveal">Frequently Asked Questions</h2>
+
+            <div class="faq-list reveal">
+                <details>
+                    <summary>How does the AI Trap Scanner work?</summary>
+                    <p>Take a screenshot of any subscription signup page, terms of service, or email confirmation. Chompd's AI (powered by Claude) analyses the text and flags hidden traps — auto-renewals, cancellation barriers, price increase clauses, and anything else buried in the fine print. Your screenshot is processed securely and never stored.</p>
+                </details>
+
+                <details>
+                    <summary>Do I need to connect my bank account?</summary>
+                    <p>No. Chompd never asks for bank access, email access, or any personal login. You add subscriptions manually or by scanning screenshots. Your financial data stays on your device.</p>
+                </details>
+
+                <details>
+                    <summary>Is there a monthly subscription fee?</summary>
+                    <p>No. The irony of a subscription tracker that charges you monthly isn't lost on us. Chompd Pro is a one-time purchase of €5. The free tier is genuinely free forever with unlimited subscription tracking.</p>
+                </details>
+
+                <details>
+                    <summary>What languages does Chompd support?</summary>
+                    <p>English, Polish, German, French, and Spanish — with more coming based on user feedback.</p>
+                </details>
+
+                <details>
+                    <summary>How is my data protected?</summary>
+                    <p>Chompd uses anonymous authentication — no email, no name, no account. Your subscription data is stored locally on your device. Optional cloud sync uses EU-hosted servers (Supabase) and is encrypted in transit. We collect zero analytics and serve zero ads.</p>
+                </details>
+
+                <details>
+                    <summary>Can I export my data?</summary>
+                    <p>Yes. Chompd Pro includes CSV export so you can take your data anywhere. We don't believe in locking you in.</p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- 11. ROADMAP -->
+    <section class="roadmap-section" id="roadmap">
+        <div class="container">
+            <span class="section-label reveal">🗺️ Roadmap</span>
+            <h2 class="section-title reveal">Where Chompd is headed.</h2>
+            <p class="section-subtitle reveal">We ship fast and listen to users. Here's what's coming.</p>
+
+            <div class="roadmap-grid reveal">
+                <div class="roadmap-column shipped">
+                    <h3>✅ Recently Shipped</h3>
+                    <ul>
+                        <li>AI Trap Scanner with screenshot + paste text</li>
+                        <li>5-language support (EN, PL, DE, FR, ES)</li>
+                        <li>Smart renewal reminders</li>
+                        <li>Cancel guides with refund templates</li>
+                        <li>Spending dashboard with budgets</li>
+                        <li>Dark mode by default</li>
+                        <li>CSV data export</li>
+                    </ul>
+                </div>
+
+                <div class="roadmap-column next">
+                    <h3>🔨 Up Next</h3>
+                    <ul>
+                        <li>iOS home screen widgets</li>
+                        <li>Siri Shortcuts integration</li>
+                        <li>Shareable "Subscription Shock" cards</li>
+                        <li>Live Activities for renewal countdowns</li>
+                        <li>Referral program</li>
+                    </ul>
+                </div>
+
+                <div class="roadmap-column horizon">
+                    <h3>🔭 On the Horizon</h3>
+                    <ul>
+                        <li>On-device AI with Apple Intelligence</li>
+                        <li>Natural language queries ("How much on streaming?")</li>
+                        <li>Subscription overlap detection</li>
+                        <li>Price increase warnings</li>
+                        <li>Annual "Subscription Wrapped" report</li>
+                        <li>Apple Watch complications</li>
+                        <li>Family subscription sharing</li>
+                    </ul>
+                </div>
+            </div>
+
+            <p class="roadmap-footer reveal">Have a feature request? <a href="mailto:chompdapp@gmail.com">We'd love to hear it.</a></p>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- 12. FINAL CTA -->
     <section class="final-cta">
-        <img src="piranha_celebrate.png" alt="Celebrating" class="mascot final-cta-mascot mascot-float reveal">
+        <img src="piranha_celebrate.png" alt="Chompd piranha celebrating savings" class="mascot final-cta-mascot mascot-float reveal" width="120" height="120" loading="lazy">
         <h2 class="reveal">Stop getting chomped.</h2>
         <p class="reveal">Take control of your subscriptions. Your wallet will thank you.</p>
         <a href="#" class="hero-cta reveal">
@@ -463,11 +755,13 @@
         <div class="footer-inner">
             <div class="footer-left">🦷 CHOMP<span class="logo-d">D</span></div>
             <div class="footer-right">
+                <a href="#faq">FAQ</a>
+                <a href="#roadmap">Roadmap</a>
                 <a href="/privacy/">Privacy Policy</a>
                 <a href="mailto:chompdapp@gmail.com">Support</a>
             </div>
         </div>
-        <p class="footer-tagline">Built with 🦷 by an indie dev in Poland. No investors. No ads. No nonsense.</p>
+        <p class="footer-tagline">Built with Flutter & Claude AI by an indie dev in Poland. No investors. No ads. No nonsense.</p>
     </footer>
 
     <script>
