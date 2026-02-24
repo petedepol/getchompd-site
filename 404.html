@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found — Chompd</title>
+    <meta name="description" content="This page doesn't exist. But Chompd does — AI subscription tracker that reads the fine print.">
+    <meta name="robots" content="noindex">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..800;1,9..40,300..800&family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-deep: #080e0c;
+            --bg-card: #0f1916;
+            --text-primary: #eaf0ee;
+            --text-secondary: #8a9e97;
+            --text-muted: #546b64;
+            --accent: #4ecdc4;
+            --border: rgba(78, 205, 196, 0.08);
+            --border-accent: rgba(78, 205, 196, 0.25);
+            --font-display: 'Fraunces', Georgia, serif;
+            --font-body: 'DM Sans', -apple-system, sans-serif;
+        }
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: var(--font-body);
+            background: var(--bg-deep);
+            color: var(--text-primary);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 16px 24px; background: rgba(8, 14, 12, 0.85); backdrop-filter: blur(24px); border-bottom: 1px solid var(--border); }
+        .nav-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        .nav-logo { display: flex; align-items: center; gap: 10px; font-family: var(--font-display); font-weight: 700; font-size: 1.25rem; color: var(--text-primary); text-decoration: none; }
+        .nav-logo img { width: 32px; height: 32px; border-radius: 8px; }
+        .nav-logo .logo-d { color: var(--accent); }
+
+        .error-page {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 120px 24px 60px;
+            position: relative;
+            overflow: hidden;
+        }
+        .error-page::before {
+            content: '';
+            position: absolute;
+            top: -200px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 900px;
+            height: 900px;
+            background: radial-gradient(ellipse, rgba(78, 205, 196, 0.05) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .error-mascot {
+            width: 160px;
+            height: 160px;
+            margin-bottom: 32px;
+            animation: sadFloat 4s ease-in-out infinite;
+            pointer-events: none;
+            user-select: none;
+        }
+        @keyframes sadFloat {
+            0%, 100% { transform: translateY(0) rotate(-3deg); }
+            50% { transform: translateY(-12px) rotate(3deg); }
+        }
+
+        .error-code {
+            font-family: var(--font-display);
+            font-size: clamp(5rem, 15vw, 10rem);
+            font-weight: 900;
+            line-height: 1;
+            color: var(--accent);
+            opacity: 0.15;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -70%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .error-content { position: relative; z-index: 1; }
+
+        .error-content h1 {
+            font-family: var(--font-display);
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 12px;
+        }
+        .error-content h1 .accent { color: var(--accent); font-style: italic; }
+
+        .error-content p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            max-width: 480px;
+            margin: 0 auto 32px;
+            line-height: 1.6;
+        }
+
+        .error-speech {
+            display: inline-block;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 14px 24px;
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            font-style: italic;
+            margin-bottom: 36px;
+            position: relative;
+        }
+        .error-speech::after {
+            content: '';
+            position: absolute;
+            top: -8px;
+            left: 50%;
+            transform: translateX(-50%) rotate(45deg);
+            width: 14px;
+            height: 14px;
+            background: var(--bg-card);
+            border-left: 1px solid var(--border);
+            border-top: 1px solid var(--border);
+        }
+
+        .error-links {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .error-links a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 28px;
+            border-radius: 100px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        .btn-primary {
+            background: var(--accent);
+            color: var(--bg-deep);
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 40px rgba(78, 205, 196, 0.3);
+        }
+        .btn-ghost {
+            background: var(--bg-card);
+            color: var(--text-secondary);
+            border: 1px solid var(--border);
+        }
+        .btn-ghost:hover {
+            border-color: var(--border-accent);
+            color: var(--text-primary);
+        }
+
+        footer { padding: 40px 24px; border-top: 1px solid var(--border); text-align: center; margin-top: auto; }
+        .footer-tagline { font-size: 0.78rem; color: var(--text-muted); }
+        footer a { color: var(--text-muted); text-decoration: none; font-size: 0.82rem; margin: 0 12px; }
+        footer a:hover { color: var(--text-secondary); }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-inner">
+            <a href="/" class="nav-logo"><img src="/piranha_full.png" alt="Chompd"> CHOMP<span class="logo-d">D</span></a>
+        </div>
+    </nav>
+
+    <main class="error-page">
+        <div class="error-code">404</div>
+        <div class="error-content">
+            <img src="/piranha_sad.png" alt="Sad Chompd piranha mascot" class="error-mascot" width="160" height="160">
+            <div class="error-speech">"I tried to chomp this page but there's nothing here..."</div>
+            <h1>Looks like this page got <span class="accent">cancelled.</span></h1>
+            <p>Unlike your subscriptions, this one actually disappeared when it was supposed to.</p>
+            <div class="error-links">
+                <a href="/" class="btn-primary">Back to homepage</a>
+                <a href="mailto:chompdapp@gmail.com" class="btn-ghost">Report a broken link</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <a href="/">Home</a> · <a href="/privacy/">Privacy</a> · <a href="mailto:chompdapp@gmail.com">Support</a>
+        <p class="footer-tagline" style="margin-top: 16px;">Built with teeth by an indie dev in Poland.</p>
+    </footer>
+
+</body>
+</html>
