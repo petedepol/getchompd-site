@@ -6,7 +6,7 @@
 
     <!-- SEO Essentials -->
     <title>Chompd — AI Subscription Tracker That Reads the Fine Print</title>
-    <meta name="description" content="Stop falling for subscription traps. Chompd uses AI to scan fine print, detect hidden fees, and track every subscription. Privacy-first, no bank linking. €5 one-time purchase for iOS.">
+    <meta name="description" content="Stop falling for subscription traps. Chompd uses AI to scan fine print, detect hidden fees, and track every subscription. Privacy-first, no bank linking. €4.99 one-time purchase for iOS.">
     <meta name="keywords" content="subscription tracker, subscription manager, hidden fees detector, subscription trap scanner, track subscriptions iOS, cancel subscriptions, AI subscription scanner">
     <link rel="canonical" href="https://getchompd.com/">
     <meta name="robots" content="index, follow">
@@ -20,7 +20,7 @@
 
     <!-- Open Graph (Facebook, LinkedIn, iMessage, Slack, Discord) -->
     <meta property="og:title" content="Chompd — AI Subscription Tracker That Reads the Fine Print">
-    <meta property="og:description" content="Stop falling for subscription traps. AI-powered fine print scanning, privacy-first tracking, no bank linking. €5 one-time.">
+    <meta property="og:description" content="Stop falling for subscription traps. AI-powered fine print scanning, privacy-first tracking, no bank linking. €4.99 one-time.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://getchompd.com">
     <meta property="og:image" content="https://getchompd.com/images/og-image.jpg">
@@ -33,13 +33,15 @@
     <!-- Twitter/X Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Chompd — AI That Reads Subscription Fine Print">
-    <meta name="twitter:description" content="Stop falling for subscription traps. Privacy-first iOS tracker. €5 one-time.">
+    <meta name="twitter:description" content="Stop falling for subscription traps. Privacy-first iOS tracker. €4.99 one-time.">
     <meta name="twitter:image" content="https://getchompd.com/images/og-image.jpg">
 
-    <!-- Favicon (generate from piranha logo using favicon.io) -->
+    <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="manifest" href="/site.webmanifest">
 
     <!-- Preload critical assets -->
     <link rel="preload" href="piranha_wave.png" as="image">
@@ -99,7 +101,7 @@
           "name": "Is there a monthly subscription fee?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "No. Chompd Pro is a one-time purchase of €5. The free tier is genuinely free forever — track up to 3 subscriptions and get 1 free AI scan."
+            "text": "No. Chompd Pro is a one-time purchase of €4.99. The free tier is genuinely free forever with unlimited subscription tracking."
           }
         },
         {
@@ -234,7 +236,8 @@
 
         .showcase { padding: 80px 24px; }
         .showcase .container { max-width: 1000px; margin: 0 auto; text-align: center; }
-        .screenshot-grid { display: flex; gap: 20px; justify-content: center; margin-top: 48px; overflow-x: auto; padding: 20px 0; }
+        .screenshot-grid { display: flex; gap: 20px; margin-top: 48px; overflow-x: auto; padding: 20px 0; }
+        .screenshot-grid::before, .screenshot-grid::after { content: ''; flex-shrink: 0; width: max(0px, (100% - 1420px) / 2); }
         .screenshot-frame { flex-shrink: 0; width: 220px; border-radius: 24px; overflow: hidden; border: 2px solid var(--border); box-shadow: 0 20px 60px rgba(0,0,0,0.4); transition: transform 0.3s ease; }
         .screenshot-frame:hover { transform: translateY(-8px); }
         .screenshot-frame img { width: 100%; height: auto; display: block; }
@@ -526,10 +529,12 @@
             <h2 class="section-title reveal">Designed to be simple.</h2>
             <p class="section-subtitle reveal" style="margin: 0 auto;">No clutter, no dark patterns — just a clear view of what you're paying for.</p>
             <div class="screenshot-grid reveal">
-                <div class="screenshot-frame"><img src="screenshots/onboarding.png" alt="Chompd app onboarding screen showing quick setup flow" width="1206" height="2622" loading="lazy"></div>
-                <div class="screenshot-frame"><img src="screenshots/dashboard.png" alt="Chompd subscription dashboard showing monthly spending overview" width="1206" height="2622" loading="lazy"></div>
-                <div class="screenshot-frame"><img src="screenshots/how-it-works.png" alt="Chompd how it works screen showing AI scan process" width="1206" height="2622" loading="lazy"></div>
-                <div class="screenshot-frame"><img src="screenshots/settings.png" alt="Chompd settings screen with privacy controls" width="1206" height="2622" loading="lazy"></div>
+                <div class="screenshot-frame"><img src="screenshots/screenshot_1.png" alt="Chompd AI Trap Scanner detecting a hidden price hike in a subscription offer" width="1320" height="2868" loading="lazy"></div>
+                <div class="screenshot-frame"><img src="screenshots/screenshot_2.png" alt="Chompd dashboard showing monthly and yearly subscription spending overview" width="1320" height="2868" loading="lazy"></div>
+                <div class="screenshot-frame"><img src="screenshots/screenshot_3.png" alt="Chompd step-by-step refund guide for Apple App Store" width="1320" height="2868" loading="lazy"></div>
+                <div class="screenshot-frame"><img src="screenshots/screenshot_4.png" alt="Chompd renewal calendar showing upcoming subscription charges" width="1320" height="2868" loading="lazy"></div>
+                <div class="screenshot-frame"><img src="screenshots/screenshot_5.png" alt="Chompd step-by-step cancellation guide for Netflix" width="1320" height="2868" loading="lazy"></div>
+                <div class="screenshot-frame"><img src="screenshots/screenshot_6.png" alt="Chompd Pro one-time purchase screen showing lifetime pricing" width="1320" height="2868" loading="lazy"></div>
             </div>
         </div>
     </section>
@@ -588,7 +593,7 @@
                 <div class="price-card pro reveal">
                     <span class="price-tag">Most popular</span>
                     <h3>Pro</h3>
-                    <div class="price-amount"><span class="currency">€</span><span class="number">5</span></div>
+                    <div class="price-amount"><span class="currency">€</span><span class="number">4.99</span></div>
                     <p class="price-note">One-time purchase · try free for 7 days</p>
                     <ul class="price-features">
                         <li><span class="check">✓</span> Everything in Free</li>
@@ -631,7 +636,7 @@
                 <table class="compare-table">
                     <thead><tr><th></th><th class="highlight">Chompd</th><th>Rocket Money</th><th>Bobby</th><th>Orbit</th><th>Chargeback</th></tr></thead>
                     <tbody>
-                        <tr><td>Price</td><td class="cc"><span class="c-yes">Free + €5 once</span></td><td>Free + $6–14/mo</td><td>$2.99 once</td><td>Free + $9.99/yr</td><td><span class="c-warn">$144/year</span></td></tr>
+                        <tr><td>Price</td><td class="cc"><span class="c-yes">Free + €4.99 once</span></td><td>Free + $6–14/mo</td><td>$2.99 once</td><td>Free + $9.99/yr</td><td><span class="c-warn">$144/year</span></td></tr>
                         <tr><td>Bank linking required</td><td class="cc"><span class="c-yes">No</span></td><td><span class="c-warn">Yes</span></td><td>No</td><td>No</td><td><span class="c-warn">Yes</span></td></tr>
                         <tr><td>Email access required</td><td class="cc"><span class="c-yes">No</span></td><td>No</td><td>No</td><td>No</td><td><span class="c-warn">Yes</span></td></tr>
                         <tr><td>AI-powered detection</td><td class="cc"><span class="c-yes">Yes — screenshot + text</span></td><td>No</td><td>No</td><td>No</td><td>Yes — email scan</td></tr>
@@ -665,7 +670,7 @@
 
                 <details>
                     <summary>Is there a monthly subscription fee?</summary>
-                    <p>No. The irony of a subscription tracker that charges you monthly isn't lost on us. Chompd Pro is a one-time purchase of €5. The free tier is genuinely free forever — track up to 3 subscriptions and get 1 free AI scan.</p>
+                    <p>No. The irony of a subscription tracker that charges you monthly isn't lost on us. Chompd Pro is a one-time purchase of €4.99. The free tier is genuinely free forever with unlimited subscription tracking.</p>
                 </details>
 
                 <details>

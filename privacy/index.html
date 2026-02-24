@@ -118,8 +118,8 @@
         <h2>4. AI Trap Scanner</h2>
         <p>When you use the AI Trap Scanner, the screenshot or photo you provide is sent to a third-party AI service (Anthropic's Claude API) for analysis. This is necessary to detect subscription traps such as hidden auto-renewals, cancellation barriers, and price increases.</p>
         <ul>
-            <li>The image is sent directly from your device to Anthropic's API servers</li>
-            <li>The image is used solely to generate the scan result and is not stored by Anthropic beyond the API request</li>
+            <li>The image or text is sent directly from your device to Anthropic's API servers</li>
+            <li>Anthropic may retain this data for up to 30 days for safety monitoring purposes. This data is not used to train AI models</li>
             <li>No personal identifiers (name, email, device ID) are attached to the request</li>
             <li>Scan results are stored locally on your device and in your cloud account</li>
         </ul>
@@ -161,7 +161,7 @@
         <table class="data-table">
             <thead><tr><th>Service</th><th>Purpose</th><th>Data Sent</th></tr></thead>
             <tbody>
-                <tr><td>Anthropic (Claude API)</td><td>AI Trap Scanner & Insights</td><td>Image content / subscription data, no personal identifiers</td></tr>
+                <tr><td>Anthropic Claude (Claude API)</td><td>AI Trap Scanner & Insights</td><td>Image content / subscription data, no personal identifiers. Anthropic may retain data for up to 30 days for safety monitoring; not used for AI training.</td></tr>
                 <tr><td>Supabase</td><td>Cloud database & authentication</td><td>Anonymous account ID, subscription data</td></tr>
                 <tr><td>Apple App Store</td><td>In-App Purchases</td><td>Handled entirely by Apple</td></tr>
             </tbody>
@@ -175,7 +175,7 @@
             <li>Uninstalling the app (removes local data)</li>
             <li>Contacting us at <a href="mailto:chompdapp@gmail.com">chompdapp@gmail.com</a> to request full account deletion</li>
         </ul>
-        <p>AI scan images are processed in real-time and are not retained by us or by Anthropic beyond the API request.</p>
+        <p>When you use the AI scanner, your image or text is sent to Anthropic (Claude API) for analysis. Anthropic may retain this data for up to 30 days for safety monitoring purposes. This data is not used to train AI models. No personal identifiers are attached to the data sent.</p>
 
         <h2>12. International Data Transfers</h2>
         <p>Our cloud database is hosted by Supabase in the European Union. When you use the AI Trap Scanner or AI Insights features, data is sent to Anthropic's servers in the United States. This transfer is:</p>
