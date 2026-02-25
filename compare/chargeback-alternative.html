@@ -41,10 +41,11 @@
     }
     </script>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..800;1,9..40,300..800&family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&display=swap" rel="stylesheet">
     <style>
+        @font-face { font-family: 'DM Sans'; font-style: normal; font-weight: 300 800; font-display: swap; src: url(/fonts/dm-sans.woff2) format('woff2'); }
+        @font-face { font-family: 'DM Sans'; font-style: italic; font-weight: 300 800; font-display: swap; src: url(/fonts/dm-sans-italic.woff2) format('woff2'); }
+        @font-face { font-family: 'Fraunces'; font-style: normal; font-weight: 300 900; font-display: swap; src: url(/fonts/fraunces.woff2) format('woff2'); }
+        @font-face { font-family: 'Fraunces'; font-style: italic; font-weight: 300 900; font-display: swap; src: url(/fonts/fraunces-italic.woff2) format('woff2'); }
         :root {
             --bg-deep: #080e0c; --bg-card: #0f1916; --bg-elevated: #182a26;
             --text-primary: #eaf0ee; --text-secondary: #8a9e97; --text-muted: #546b64;
@@ -121,13 +122,18 @@
         .footer-tagline { font-size: 0.78rem; color: var(--text-muted); }
         footer a { color: var(--text-muted); text-decoration: none; font-size: 0.82rem; margin: 0 12px; }
 
+        .skip-link { position: absolute; left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden; z-index: 1000; padding: 8px 16px; background: #0f1923; color: #fff; font-size: 14px; text-decoration: none; }
+        .skip-link:focus { position: fixed; top: 8px; left: 8px; width: auto; height: auto; }
+        :focus-visible { outline: 2px solid #4fc3f7; outline-offset: 2px; }
+
         @media (max-width: 640px) { .pros-cons { grid-template-columns: 1fr; } .nav-links { display: none; } }
     </style>
 </head>
 <body>
-    <nav><div class="nav-inner"><a href="/" class="nav-logo"><img src="/piranha_full.png" alt="Chompd"> CHOMP<span class="logo-d">D</span></a><ul class="nav-links"><li><a href="/#features">Features</a></li><li><a href="/#pricing">Pricing</a></li><li><a href="/#compare">Compare</a></li><li><a href="/privacy/">Privacy</a></li><li><a href="#" class="nav-cta">Download</a></li></ul></div></nav>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <nav><div class="nav-inner"><a href="/" class="nav-logo"><img src="/piranha_full.png" alt="Chompd" width="32" height="32"> CHOMP<span class="logo-d">D</span></a><ul class="nav-links"><li><a href="/#features">Features</a></li><li><a href="/#pricing">Pricing</a></li><li><a href="/#compare">Compare</a></li><li><a href="/privacy/">Privacy</a></li><li><a href="https://apps.apple.com/app/chompd/idXXXXXXXXX" class="nav-cta">Download</a></li></ul></div></nav><!-- TODO: Replace App Store URL with real one -->
 
-    <article class="article">
+    <article class="article" id="main">
         <div class="breadcrumb"><a href="/">Chompd</a> / <a href="/compare/">Compare</a> / Chargeback alternatives</div>
         <h1>Best Chargeback App Alternatives in 2026</h1>
         <p class="article-meta">Last updated February 2026 · 6 min read</p>
@@ -182,7 +188,7 @@
         <p><strong>Choose Bobby</strong> if you want the absolute simplest, most private option and are happy to manually enter everything.</p>
         <p><strong>Choose Chompd</strong> if you want AI-powered features — especially the Trap Scanner — without giving up your bank login or email access. If privacy matters to you but manual-only feels limiting, we built this for you.</p>
 
-        <div class="cta-box"><h3>Try Chompd free</h3><p>Track up to 3 subscriptions and get 1 free AI scan. Upgrade to Pro for €5 — once, forever.</p><a href="#" class="cta-btn">Download on the App Store</a></div>
+        <div class="cta-box"><h3>Try Chompd free</h3><p>Track up to 3 subscriptions and get 1 free AI scan. Upgrade to Pro for €5 — once, forever.</p><a href="https://apps.apple.com/app/chompd/idXXXXXXXXX" class="cta-btn">Download on the App Store</a><!-- TODO: Replace with real App Store URL --></div>
 
         <h2>Frequently asked questions</h2>
         <div class="faq-item"><h4>Can Chompd automatically detect my subscriptions like Chargeback does?</h4><p>Not automatically from bank or email — that would require access we don't want. Instead, you screenshot signup pages or paste confirmation emails, and our AI extracts the details. You can also add subscriptions manually or search our database of popular services.</p></div>
