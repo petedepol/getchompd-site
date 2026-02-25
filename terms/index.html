@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service — Chompd</title>
+    <meta name="description" content="Terms of Service for Chompd — the subscription defence app. Simple, fair terms for a simple, fair app.">
+    <link rel="canonical" href="https://getchompd.com/terms/">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Terms of Service — Chompd">
+    <meta property="og:description" content="Terms of Service for Chompd — the subscription defence app.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://getchompd.com/terms/">
+    <meta property="og:image" content="https://getchompd.com/piranha_full.png">
+    <meta property="og:site_name" content="Chompd">
+    <meta property="og:locale" content="en_GB">
+
+    <!-- Twitter/X Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Terms of Service — Chompd">
+    <meta name="twitter:description" content="Terms of Service for Chompd — the subscription defence app.">
+    <meta name="twitter:image" content="https://getchompd.com/piranha_full.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+    <style>
+        @font-face { font-family: 'DM Sans'; font-style: normal; font-weight: 300 800; font-display: swap; src: url(/fonts/dm-sans.woff2) format('woff2'); }
+        @font-face { font-family: 'DM Sans'; font-style: italic; font-weight: 300 800; font-display: swap; src: url(/fonts/dm-sans-italic.woff2) format('woff2'); }
+        @font-face { font-family: 'Fraunces'; font-style: normal; font-weight: 300 900; font-display: swap; src: url(/fonts/fraunces.woff2) format('woff2'); }
+        @font-face { font-family: 'Fraunces'; font-style: italic; font-weight: 300 900; font-display: swap; src: url(/fonts/fraunces-italic.woff2) format('woff2'); }
+        :root {
+            --bg-deep: #080e0c;
+            --bg-card: #0f1916;
+            --bg-elevated: #182a26;
+            --text-primary: #eaf0ee;
+            --text-secondary: #8a9e97;
+            --text-muted: #546b64;
+            --accent: #4ecdc4;
+            --accent-glow: rgba(78, 205, 196, 0.12);
+            --border: rgba(78, 205, 196, 0.08);
+            --border-accent: rgba(78, 205, 196, 0.25);
+            --radius: 16px;
+            --radius-sm: 10px;
+            --font-display: 'Fraunces', Georgia, serif;
+            --font-body: 'DM Sans', -apple-system, sans-serif;
+        }
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: var(--font-body); background: var(--bg-deep); color: var(--text-primary); line-height: 1.7; -webkit-font-smoothing: antialiased; }
+
+        nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 16px 24px; background: rgba(8, 14, 12, 0.85); backdrop-filter: blur(24px); border-bottom: 1px solid var(--border); }
+        .nav-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        .nav-logo { display: flex; align-items: center; gap: 10px; font-family: var(--font-display); font-weight: 700; font-size: 1.25rem; color: var(--text-primary); text-decoration: none; }
+        .nav-logo img { width: 32px; height: 32px; border-radius: 8px; }
+        .nav-logo .logo-d { color: var(--accent); }
+        .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
+        .nav-links a { color: var(--text-secondary); text-decoration: none; font-size: 0.9rem; font-weight: 500; }
+        .nav-links a:hover { color: var(--text-primary); }
+        .nav-cta { background: var(--accent) !important; color: var(--bg-deep) !important; padding: 8px 20px !important; border-radius: 100px; font-weight: 700 !important; }
+
+        .article { max-width: 760px; margin: 0 auto; padding: 120px 24px 80px; }
+
+        /* Short version card */
+        .tldr { background: var(--bg-card); border: 1px solid var(--border-accent); border-radius: var(--radius); padding: 28px 32px; margin-bottom: 48px; }
+        .tldr h2 { font-family: var(--font-display); font-size: 1.2rem; font-weight: 700; margin-bottom: 8px; color: var(--accent); }
+        .tldr p { font-size: 0.95rem; color: var(--text-secondary); line-height: 1.7; }
+
+        .article h1 { font-family: var(--font-display); font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 800; line-height: 1.15; margin-bottom: 8px; }
+        .article .updated { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 40px; }
+        .article h2 { font-family: var(--font-display); font-size: 1.35rem; font-weight: 700; margin-top: 48px; margin-bottom: 16px; padding-top: 32px; border-top: 1px solid var(--border); }
+        .article h2:first-of-type { border-top: none; padding-top: 0; margin-top: 0; }
+        .article p { font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 16px; line-height: 1.75; }
+        .article strong { color: var(--text-primary); }
+        .article a { color: var(--accent); }
+        .article ul { list-style: none; margin: 12px 0 20px; }
+        .article ul li { padding: 6px 0; font-size: 0.95rem; color: var(--text-secondary); padding-left: 20px; position: relative; }
+        .article ul li::before { content: '·'; position: absolute; left: 4px; color: var(--accent); font-weight: 700; }
+
+        footer { padding: 40px 24px; border-top: 1px solid var(--border); text-align: center; }
+        .footer-tagline { font-size: 0.78rem; color: var(--text-muted); }
+        footer a { color: var(--text-muted); text-decoration: none; font-size: 0.82rem; margin: 0 12px; }
+        footer a:hover { color: var(--text-secondary); }
+
+        .skip-link { position: absolute; left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden; z-index: 1000; padding: 8px 16px; background: #0f1923; color: #fff; font-size: 14px; text-decoration: none; }
+        .skip-link:focus { position: fixed; top: 8px; left: 8px; width: auto; height: auto; }
+        :focus-visible { outline: 2px solid #4fc3f7; outline-offset: 2px; }
+
+        @media (max-width: 640px) { .nav-links { display: none; } }
+    </style>
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+
+    <nav>
+        <div class="nav-inner">
+            <a href="/" class="nav-logo"><img src="/piranha_full.png" alt="Chompd" width="32" height="32"> CHOMP<span class="logo-d">D</span></a>
+            <ul class="nav-links">
+                <li><a href="/#features">Features</a></li>
+                <li><a href="/#pricing">Pricing</a></li>
+                <li><a href="/#compare">Compare</a></li>
+                <li><a href="https://apps.apple.com/app/chompd/idXXXXXXXXX" class="nav-cta">Download</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <article class="article" id="main">
+        <h1>Terms of Service</h1>
+        <p class="updated">Last updated: February 2026</p>
+
+        <div class="tldr">
+            <h2>The Short Version</h2>
+            <p>Chompd is a subscription tracker with AI scanning. Use it for personal subscription management. Don't abuse the AI features or reverse-engineer the app. Chompd Pro is a one-time purchase — no recurring charges, no hidden fees. AI features are helpful but not financial advice. We're based in Poland, EU consumer protections apply.</p>
+        </div>
+
+        <h2>1. Agreement to Terms</h2>
+        <p>By downloading, installing, or using Chompd ("the App"), you agree to these Terms of Service ("Terms"). If you don't agree, please don't use the App.</p>
+        <p>These Terms form a legal agreement between you and Piotr Michaliszyn ("we", "us", "our"), a sole trader based in Poland, who develops and operates Chompd.</p>
+
+        <h2>2. License Grant</h2>
+        <p>We grant you a limited, non-exclusive, non-transferable, revocable licence to use Chompd on Apple iOS devices that you own or control, subject to these Terms and the Apple App Store Terms of Service.</p>
+        <p>This licence does not include the right to:</p>
+        <ul>
+            <li>Copy, modify, or distribute the App or its content</li>
+            <li>Reverse-engineer, decompile, or disassemble the App</li>
+            <li>Use the App for commercial resale or redistribution</li>
+            <li>Remove any copyright or proprietary notices</li>
+        </ul>
+
+        <h2>3. Acceptable Use</h2>
+        <p>You agree to use Chompd only for its intended purpose — managing your personal subscriptions. You must not:</p>
+        <ul>
+            <li>Use the AI scanning features to process content you don't have the right to share</li>
+            <li>Attempt to overload, abuse, or exploit the AI scanning service</li>
+            <li>Use the App for any illegal or fraudulent purpose</li>
+            <li>Create multiple accounts to circumvent free tier limits</li>
+            <li>Interfere with or disrupt the App's servers or services</li>
+        </ul>
+
+        <h2>4. Chompd Pro — One-Time Purchase</h2>
+        <p>Chompd Pro is available as a <strong>one-time, non-recurring In-App Purchase</strong> through the Apple App Store. There are no subscriptions, no auto-renewals, and no recurring charges.</p>
+        <p>Once purchased, Chompd Pro is yours for the lifetime of the App. Payment is processed entirely by Apple. We do not handle or store any payment information.</p>
+        <p>Refunds are handled by Apple in accordance with their <a href="https://support.apple.com/en-gb/118223">refund policy</a>. We cannot process refunds directly.</p>
+
+        <h2>5. AI Features Disclaimer</h2>
+        <p>Chompd uses artificial intelligence (Anthropic's Claude API) to scan screenshots, detect subscription traps, and generate money-saving insights. While we strive for accuracy:</p>
+        <ul>
+            <li><strong>AI results are not guaranteed to be accurate.</strong> Always verify important details independently</li>
+            <li><strong>Chompd is not financial advice.</strong> The App is a tool to help you manage subscriptions — it does not provide financial, legal, or investment advice</li>
+            <li><strong>Trap detection is best-effort.</strong> We cannot guarantee that every subscription trap or dark pattern will be identified</li>
+            <li><strong>Insights are informational.</strong> AI-generated insights are suggestions, not recommendations. Your financial decisions are your own</li>
+        </ul>
+        <p>By using AI features, you acknowledge these limitations and agree that we are not liable for any decisions made based on AI-generated content.</p>
+
+        <h2>6. Intellectual Property</h2>
+        <p>The Chompd App, including its design, code, mascot (the piranha character), branding, and all associated content, is the intellectual property of Piotr Michaliszyn. All rights reserved.</p>
+        <p>Your subscription data belongs to you. We claim no ownership of any data you enter into the App.</p>
+
+        <h2>7. Limitation of Liability</h2>
+        <p>To the maximum extent permitted by applicable law, Chompd and its developer shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of the App.</p>
+        <p>The App is provided <strong>"as is"</strong> and <strong>"as available"</strong> without warranties of any kind, whether express or implied. We do not warrant that the App will be uninterrupted, error-free, or free of harmful components.</p>
+        <p>Our total liability for any claims related to the App shall not exceed the amount you paid for Chompd Pro (if applicable).</p>
+        <p><strong>Nothing in these Terms excludes or limits liability</strong> for death or personal injury caused by negligence, fraud, or any liability that cannot be excluded by applicable law. EU consumer protection rights are unaffected.</p>
+
+        <h2>8. Termination</h2>
+        <p>You may stop using Chompd at any time by uninstalling the App and deleting your account (available in Settings).</p>
+        <p>We may suspend or terminate your access to the App if you violate these Terms, abuse AI features, or use the App in a way that harms other users or our services. In such cases, we will make reasonable efforts to notify you.</p>
+
+        <h2>9. Governing Law</h2>
+        <p>These Terms are governed by the laws of the Republic of Poland. If you are a consumer in the European Union, you also benefit from any mandatory provisions of the consumer protection laws of your country of residence.</p>
+        <p>Nothing in these Terms affects your statutory rights as a consumer under EU law, including the Consumer Rights Directive (2011/83/EU).</p>
+
+        <h2>10. Dispute Resolution</h2>
+        <p>If you have a concern or dispute, please contact us first at <a href="mailto:chompdapp@gmail.com">chompdapp@gmail.com</a>. We'll try to resolve things informally — most issues can be sorted with a quick email.</p>
+        <p>If we can't resolve it informally, disputes shall be submitted to the competent courts of Poland. EU consumers may also use the <a href="https://ec.europa.eu/consumers/odr">EU Online Dispute Resolution platform</a>.</p>
+
+        <h2>11. Changes to These Terms</h2>
+        <p>We may update these Terms from time to time. When we do, we'll update the "Last updated" date at the top of this page. For significant changes, we'll notify you through the App.</p>
+        <p>Continued use of Chompd after changes are posted constitutes acceptance of the updated Terms.</p>
+
+        <h2>12. Contact Us</h2>
+        <p>Email: <a href="mailto:chompdapp@gmail.com">chompdapp@gmail.com</a><br>Website: <a href="https://getchompd.com">getchompd.com</a></p>
+    </article>
+
+    <footer>
+        <a href="/">Home</a> · <a href="/privacy/">Privacy</a> · <a href="/terms/">Terms</a> · <a href="mailto:chompdapp@gmail.com">Support</a>
+        <p class="footer-tagline" style="margin-top: 16px;">&copy; 2026 Chompd. All rights reserved.</p>
+    </footer>
+</body>
+</html>

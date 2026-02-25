@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy — Chompd</title>
-    <meta name="description" content="Chompd's privacy policy. We keep your data private — no tracking, no analytics, no data sales. Anonymous accounts, on-device storage, EU-hosted cloud.">
+    <meta name="description" content="Chompd's privacy policy. We keep your data private — privacy-first design, minimal analytics, no data sales. Anonymous accounts, on-device storage, EU-hosted cloud.">
     <link rel="canonical" href="https://getchompd.com/privacy/">
     <meta name="robots" content="index, follow">
 
     <!-- Open Graph -->
     <meta property="og:title" content="Privacy Policy — Chompd">
-    <meta property="og:description" content="Chompd keeps your data private — no tracking, no analytics, no data sales. Anonymous accounts, on-device storage, EU-hosted cloud.">
+    <meta property="og:description" content="Chompd keeps your data private — privacy-first design, minimal analytics, no data sales. Anonymous accounts, on-device storage, EU-hosted cloud.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://getchompd.com/privacy/">
     <meta property="og:image" content="https://getchompd.com/piranha_full.png">
@@ -20,7 +20,7 @@
     <!-- Twitter/X Card -->
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Privacy Policy — Chompd">
-    <meta name="twitter:description" content="Chompd keeps your data private — no tracking, no analytics, no data sales.">
+    <meta name="twitter:description" content="Chompd keeps your data private — privacy-first design, minimal analytics, no data sales.">
     <meta name="twitter:image" content="https://getchompd.com/piranha_full.png">
 
     <!-- Favicon -->
@@ -119,7 +119,7 @@
 
         <div class="tldr">
             <h2>The Short Version</h2>
-            <p>Chompd keeps your data private. Your subscriptions are stored on your device and optionally synced to a secure cloud database tied to an anonymous account — no email, no name, no tracking. We use AI to scan screenshots and generate money-saving insights. We don't run analytics, we don't show ads, and we don't sell your data. That's it.</p>
+            <p>Chompd keeps your data private. Your subscriptions are stored on your device and optionally synced to a secure cloud database tied to an anonymous account — no email, no name, no tracking. We use AI to scan screenshots and generate money-saving insights. We use minimal, privacy-focused analytics to improve the app — no personal data, no ads, no data sales. That's it.</p>
         </div>
 
         <h2>1. Who We Are</h2>
@@ -174,30 +174,40 @@
         <h2>8. In-App Purchases</h2>
         <p>Chompd Pro is available as a one-time In-App Purchase through Apple's App Store. All payment processing is handled entirely by Apple. We do not receive, process, or store any payment information. See <a href="https://www.apple.com/legal/privacy/">Apple's privacy policy</a> for details.</p>
 
-        <h2>9. What We Do NOT Collect</h2>
+        <h2>9. Analytics & Crash Reporting</h2>
+        <p>To improve the app and fix bugs, Chompd uses two privacy-focused services:</p>
+        <ul>
+            <li><strong>PostHog</strong> — anonymous product analytics. We track feature usage events (e.g. "scan completed", "subscription added") to understand which features are used. No personal identifiers, device IDs, or advertising IDs are collected. PostHog is self-hosted in the EU.</li>
+            <li><strong>Sentry</strong> — crash reporting. When the app crashes, an error log is sent automatically. All personally identifiable information is scrubbed before transmission. Crash reports help us identify and fix bugs quickly.</li>
+        </ul>
+        <p>Neither service collects your name, email, location, or subscription data. You cannot be personally identified through these services.</p>
+        <p><strong>Legal basis (GDPR):</strong> Legitimate interest in maintaining and improving app quality and stability.</p>
+
+        <h2>10. What We Do NOT Collect</h2>
         <p>To be explicit, Chompd does not collect:</p>
         <ul>
             <li>Names, email addresses, or passwords (there is no registration)</li>
             <li>Device identifiers or advertising IDs</li>
             <li>Location data</li>
-            <li>Usage analytics or behavioural tracking</li>
-            <li>Crash reports or diagnostics</li>
+            <li>Behavioural tracking or ad-related analytics</li>
             <li>Cookies or tracking pixels</li>
             <li>Data from other apps on your device</li>
         </ul>
 
-        <h2>10. Third-Party Services</h2>
+        <h2>11. Third-Party Services</h2>
         <table class="data-table">
             <thead><tr><th>Service</th><th>Purpose</th><th>Data Sent</th></tr></thead>
             <tbody>
                 <tr><td>Anthropic Claude (Claude API)</td><td>AI Trap Scanner & Insights</td><td>Image content / subscription data, no personal identifiers. Anthropic may retain data for up to 30 days for safety monitoring; not used for AI training.</td></tr>
                 <tr><td>Supabase</td><td>Cloud database & authentication</td><td>Anonymous account ID, subscription data</td></tr>
                 <tr><td>Apple App Store</td><td>In-App Purchases</td><td>Handled entirely by Apple</td></tr>
+                <tr><td>PostHog</td><td>Anonymous product analytics</td><td>Feature usage events (no personal identifiers). EU-hosted.</td></tr>
+                <tr><td>Sentry</td><td>Crash reporting</td><td>Error logs with PII scrubbed. No subscription data.</td></tr>
             </tbody>
         </table>
-        <p>We do not use any third-party analytics, advertising, or tracking services.</p>
+        <p>We do not use any advertising or behavioural tracking services. Analytics data cannot be linked to your identity.</p>
 
-        <h2>11. Data Retention</h2>
+        <h2>12. Data Retention</h2>
         <p>Your cloud data is retained as long as your anonymous account exists. You can delete all your data at any time by:</p>
         <ul>
             <li>Deleting individual subscriptions within the app</li>
@@ -206,7 +216,7 @@
         </ul>
         <p>When you use the AI scanner, your image or text is sent to Anthropic (Claude API) for analysis. Anthropic may retain this data for up to 30 days for safety monitoring purposes. This data is not used to train AI models. No personal identifiers are attached to the data sent.</p>
 
-        <h2>12. International Data Transfers</h2>
+        <h2>13. International Data Transfers</h2>
         <p>Our cloud database is hosted by Supabase in the European Union. When you use the AI Trap Scanner or AI Insights features, data is sent to Anthropic's servers in the United States. This transfer is:</p>
         <ul>
             <li>Necessary to provide the AI-powered features</li>
@@ -214,7 +224,7 @@
             <li>Subject to Anthropic's data protection measures as described in their privacy policy</li>
         </ul>
 
-        <h2>13. Your Rights</h2>
+        <h2>14. Your Rights</h2>
         <p>Depending on your location, you may have the following rights:</p>
         <ul>
             <li><strong>Access</strong> your data — contact us and we can provide any cloud data associated with your anonymous account ID</li>
@@ -226,21 +236,21 @@
         </ul>
         <p>For EU residents: <a href="https://edpb.europa.eu/about-edpb/about-edpb/members_en">find your supervisory authority</a>. Poland: <a href="https://uodo.gov.pl">UODO</a>. UK: <a href="https://ico.org.uk">ICO</a>.</p>
 
-        <h2>14. Children's Privacy</h2>
+        <h2>15. Children's Privacy</h2>
         <p>Chompd is not directed at children under the age of 16. Since the app uses anonymous accounts and does not collect personal information, no age verification is implemented.</p>
 
-        <h2>15. California Residents (CCPA/CPRA)</h2>
-        <p>Chompd does not sell or share personal information as defined by the California Consumer Privacy Act. California residents have the same rights described in Section 13.</p>
+        <h2>16. California Residents (CCPA/CPRA)</h2>
+        <p>Chompd does not sell or share personal information as defined by the California Consumer Privacy Act. California residents have the same rights described in Section 14.</p>
 
-        <h2>16. Changes to This Policy</h2>
+        <h2>17. Changes to This Policy</h2>
         <p>If we make changes to this privacy policy, we will update the "Last updated" date at the top. For significant changes, we will notify you through the app.</p>
 
-        <h2>17. Contact Us</h2>
+        <h2>18. Contact Us</h2>
         <p>Email: <a href="mailto:chompdapp@gmail.com">chompdapp@gmail.com</a><br>Website: <a href="https://getchompd.com">getchompd.com</a></p>
     </article>
 
     <footer>
-        <a href="/">Home</a> · <a href="/privacy/">Privacy</a> · <a href="mailto:chompdapp@gmail.com">Support</a>
+        <a href="/">Home</a> · <a href="/privacy/">Privacy</a> · <a href="/terms/">Terms</a> · <a href="mailto:chompdapp@gmail.com">Support</a>
         <p class="footer-tagline" style="margin-top: 16px;">© 2026 Chompd. All rights reserved.</p>
     </footer>
 </body>
