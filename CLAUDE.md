@@ -17,9 +17,8 @@ Marketing/landing site for Chompd, an AI-powered subscription tracker iOS app. S
 - Mobile responsive styles at `@media (max-width: 768px)` in `index.html`
 - FAQPage structured data (JSON-LD) is embedded in `<head>`
 - OpenGraph + Twitter Card meta tags reference `images/og-image.jpg` — **this file does not exist yet** (pending)
-- Apple Smart App Banner meta tag is commented out at `index.html:17` — needs real App Store ID
+- Apple Smart App Banner is active with App Store ID `6759305263`
 
 ## Pending Items
 - Add `og-image.jpg` (1200x630) to `images/` directory
-- Uncomment Apple Smart App Banner and add App Store ID
 - Submit site to Google Search Console
